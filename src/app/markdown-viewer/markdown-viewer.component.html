@@ -1,0 +1,25 @@
+<main>
+    <div class="content">
+
+        <a class="header-link" routerLink="/">
+            <div class="header">
+                <h1 class="blinking-underscore">_</h1><h1>ad blog</h1>
+            </div>
+        </a>
+
+        <div *ngIf="loading()">Loading…</div>
+        <div *ngIf="error()">Error: {{ error() }}</div>
+        <article [innerHTML]="html()"></article>
+
+        <div class="arrow">
+            <a routerLink="/blog">posts ↩</a>
+        </div>
+
+
+    </div>
+
+    <div class="footer-msg">
+        <p>Made with ❤️ in Chicago.</p>
+    </div>
+
+</main>
