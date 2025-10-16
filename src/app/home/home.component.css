@@ -25,6 +25,10 @@ main {
   color: inherit;
 }
 
+p {
+  line-height: 1.4;
+}
+
 .footer {
   margin-top: auto;
   display: flex;
