@@ -26,6 +26,11 @@ main {
   color: inherit;
 }
 
+p {
+  line-height: 1.4;
+  font-size: small;
+}
+
 /* Hyperlink Styling */
 a {
   color: inherit;
@@ -72,7 +77,7 @@ a:hover, a:focus {
 
 .footer-msg {
   padding-top: 15%;
-  font-size: xx-small;
+  font-size: xx-small !important;
   bottom: 0px;
   width: 100%;
   text-align: center;
