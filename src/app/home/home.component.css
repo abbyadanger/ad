@@ -31,10 +31,10 @@ p {
   font-size: small;
 }
 
-.footer {
-  margin-top: auto;
+.links {
   display: flex;
-  gap: 16px; /* optional: adds space between items */
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .footer-msg {
