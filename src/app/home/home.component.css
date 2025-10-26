@@ -17,7 +17,7 @@ main {
 
 .header {
   display: flex;
-  font-size: 50px;
+  font-size: xx-large;
   color: #CBD183;
 }
 
@@ -28,7 +28,7 @@ main {
 
 p {
   line-height: 1.4;
-  font-size: medium;
+  font-size: small;
 }
 
 .footer {
