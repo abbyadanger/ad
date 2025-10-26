@@ -9,16 +9,17 @@
 }
 
 main {
-  background-color: #eb5e3a;
+  background-color: #25533F;
+  /* background-color: #eb5e3a; */ /* cool orange color */
   color: #FFFFFF;
   font-family: "Quicksand", sans-serif;
-  /* color: #eb5e3a; cool orange color */
 }
 
 .header {
   display: flex;
   font-size: xx-large;
-  color: #CBD183;
+  color: #B8CEE8;
+  /* color: #CBD183; */ /* lime green color */
 }
 
 .header-link {
@@ -33,7 +34,7 @@ p {
 
 .links {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   gap: 8px;
 }
 
@@ -52,12 +53,12 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  text-decoration-color: #CBD183; /* light gray underline */
+  text-decoration-color: #B8CEE8;
   transition: text-decoration-color 0.2s;
 }
 
 a:hover, a:focus {
-  text-decoration-color: #FFFFFF; /* darker underline on hover */
+  text-decoration-color: #FFFFFF;
 }
 
 /* Add this to your CSS file */
