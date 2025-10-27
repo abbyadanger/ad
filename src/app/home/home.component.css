@@ -9,7 +9,7 @@
 }
 
 main {
-  background-color: #25533F;
+  background-color: #33658a;
   /* background-color: #eb5e3a; */ /* cool orange color */
   color: #FFFFFF;
   font-family: "Quicksand", sans-serif;
@@ -18,7 +18,7 @@ main {
 .header {
   display: flex;
   font-size: xx-large;
-  color: #B8CEE8;
+  color: #86bbd8;
   /* color: #CBD183; */ /* lime green color */
 }
 
@@ -52,7 +52,7 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  text-decoration-color: #B8CEE8;
+  text-decoration-color: #86bbd8;
   transition: text-decoration-color 0.2s;
 }
 
