@@ -12,9 +12,7 @@ import { GlossyEmailInputComponent } from '../glossy-email-input/glossy-email-in
 })
 export class BlogListComponent {
   posts: Post[] = [
-  { name: 'Hello', file:'hello.md', date: '12.29.24' },
-  { name: 'Who am I?', file:'abby.md', date: '2.3.25' },
-  { name: 'Deep Dive Into JavaScript', file:'deep-dive-into-javascript.md', date: '10.14.25' },
+  { name: 'My First Post :O', file:'hello.md', date: '10.28.25' },
 
 ];
   displayedColumns: string[] = ['name', 'date'];

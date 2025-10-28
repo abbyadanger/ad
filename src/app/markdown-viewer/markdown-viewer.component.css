@@ -1,5 +1,5 @@
 .content {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: "Quicksand", sans-serif;
@@ -25,6 +25,15 @@ main {
 .header-link {
   text-decoration: none;
   color: inherit;
+}
+
+p {
+  line-height: 1.4;
+  font-size: small;
+}
+
+::ng-deep article h1 {
+  color: #86bbd8 !important;
 }
 
 /* Hyperlink Styling */
