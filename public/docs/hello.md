@@ -2,9 +2,7 @@
 
 # My First Post :O
 
-This is my first blog post.
-
-Mostly writing to check for styling purposes. Here's some lorem :)
+This is just a test. Here's some lorem :)
 
 ## Very Important Lorem
 
