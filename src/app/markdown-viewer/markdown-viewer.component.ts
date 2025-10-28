@@ -31,7 +31,8 @@ export class MarkdownViewerComponent implements OnInit {
     this.loading.set(true);
     this.error.set(null);
     try {
-      const getMdContents = await fetch(`/docs/${this.filename()}`, { cache: 'no-cache' }); // Get markdown contents
+      // Use relative path that works with GitHub Pages base href
+      const getMdContents = await fetch(`docs/${this.filename()}`, { cache: 'no-cache' }); // Get markdown contents
       if (!getMdContents.ok) throw new Error(`HTTP ${getMdContents.status}`);
       const md = await getMdContents.text(); // Translate to english
       const rawHtml = marked.parse(md) as string; // Make string
