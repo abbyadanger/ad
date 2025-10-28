@@ -7,4 +7,5 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: BlogListComponent },
   { path: 'blog/:file', component: MarkdownViewerComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
