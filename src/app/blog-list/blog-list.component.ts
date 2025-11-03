@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 })
 export class BlogListComponent {
   posts: Post[] = [
-  { name: 'My First Post :O', file:'hello.md', date: '10.28.25' },
+  { name: 'Welcome to the blog :O', file:'welcome.md', date: '11.2.25' },
 
 ];
   displayedColumns: string[] = ['name', 'date'];
