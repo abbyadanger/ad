@@ -1,7 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // import { GlossyEmailInputComponent } from '../glossy-email-input/glossy-email-input.component';
+
+export interface BlogData {
+  posts: {
+    id: string;
+    filename: string;
+    title: string;
+    dateFormatted: string;
+    slug: string;
+    tags: string[];
+    published: boolean;
+    readTime: number | null;
+  }[];
+}
 
 @Component({
   selector: 'app-blog-list',
@@ -12,16 +25,35 @@ import { RouterModule } from '@angular/router';
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
-export class BlogListComponent {
-  posts: Post[] = [
-  { name: 'Welcome to the blog :O', file:'welcome.md', date: '11.2.25' },
+export class BlogListComponent implements OnInit {
+  posts = signal<BlogData['posts']>([]);
+  loading = signal(true);
+  error = signal<string | null>(null);
 
-];
-  displayedColumns: string[] = ['name', 'date'];
-}
+  async ngOnInit() {
+    await this.loadBlogPosts();
+  }
 
-export interface Post {
-  name: string;
-  file: string;
-  date: string;
+  private async loadBlogPosts() {
+    this.loading.set(true);
+    this.error.set(null);
+    
+    try {
+      // Get metadata
+      const response = await fetch('blog-posts.json', { cache: 'no-cache' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const blogData: BlogData = await response.json();
+      
+      // Filter for published posts & sort by date (newest first)
+      const publishedPosts = blogData.posts
+        .filter(post => post.published)
+        .sort((a, b) => new Date(b.dateFormatted).getTime() - new Date(a.dateFormatted).getTime());
+      
+      this.posts.set(publishedPosts);
+    } catch (e: any) {
+      this.error.set(e.message || 'Failed to load blog posts');
+    } finally {
+      this.loading.set(false);
+    }
+  }
 }

@@ -1,7 +1,3 @@
-**11.2.2025**
-
-# Welcome to the blog :O
-
 Hello! This is my blog ... and this is my first blog post ever.
 
 ## Why ?

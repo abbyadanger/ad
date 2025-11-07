@@ -7,15 +7,28 @@
             </div>
         </a>
 
+        <!-- Loading and Error States -->
+        <div *ngIf="loading()">Loading posts...</div>
+        <div *ngIf="error()">Error: {{ error() }}</div>
+
         <!-- List of blog posts -->
-        <table class="blog-posts">
-            <tr *ngFor="let post of posts">
-                <td>
-                    <a [routerLink]="['/blog', post.file]">{{ post.name }}</a>
-                </td>
-                <td class="date">{{post.date}}</td>
-            </tr>
-        </table>
+        <div *ngIf="!loading() && !error()">
+            <table class="blog-posts" *ngIf="posts().length > 0">
+                <tr *ngFor="let post of posts()">
+                    <td>
+                        <a [routerLink]="['/blog', post.filename]">{{ post.title }}</a>
+                    </td>
+                    <td>
+                        <div class="post-tags" *ngIf="post.tags.length > 0">
+                            <span class="tag" *ngFor="let tag of post.tags">#{{ tag }}</span>
+                        </div>
+                    </td>
+                    <td class="date">{{ post.dateFormatted }}</td>
+                </tr>
+            </table>
+            
+            <p *ngIf="posts().length === 0">No blog posts yet ...</p>
+        </div>
 
         <!-- Email Input Box -->
         <!-- <app-glossy-email-input></app-glossy-email-input>    -->

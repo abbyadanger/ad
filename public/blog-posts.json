@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "welcome",
+      "filename": "welcome.md",
+      "title": "Welcome to the blog :O",
+      "dateFormatted": "10.28.2025",
+      "slug": "welcome",
+      "tags": ["personal", "intro"],
+      "published": true,
+      "readTime": null
+    }
+  ]
+}

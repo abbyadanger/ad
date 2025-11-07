@@ -9,8 +9,21 @@
 
         <div *ngIf="loading()">Loading…</div>
         <div *ngIf="error()">Error: {{ error() }}</div>
+        
+        <!-- Post Metadata -->
+        <div *ngIf="!loading() && !error() && postMetadata()" class="post-metadata">
+          <h2 class="post-title">{{ title() }}</h2>
+          <div class="post-info">
+            <span class="post-date">{{ date() }}</span>
+            •
+            <span class="read-time">{{ readTime() }}</span>
+          </div>
+          <div class="post-tags" *ngIf="tags().length > 0">
+            <span class="tag" *ngFor="let tag of tags()">#{{ tag }}</span>
+          </div>
+        </div>
+        
         <article [innerHTML]="html()"></article>
-
         <div class="arrow">
             <a routerLink="/blog"><p>posts &crarr;</p></a>
         </div>
