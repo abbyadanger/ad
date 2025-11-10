@@ -9,6 +9,16 @@
       "tags": ["personal", "intro"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "read-time",
+      "filename": "read-time.md",
+      "title": "How I Built a Read Time Calculator",
+      "dateFormatted": "11.7.2025",
+      "slug": "read-time",
+      "tags": ["tech"],
+      "published": false,
+      "readTime": null
     }
   ]
 }
