@@ -141,3 +141,8 @@ article {
 .word-count {
   color: rgba(255, 255, 255, 0.5);
 }
+
+/* Article Hyperlink Styling */
+::ng-deep article a {
+  color: #FFFFFF !important;
+}
