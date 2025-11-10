@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:abby-app": "node dist/abby-app/server/server.mjs",
-    "build:github-pages": "ng build --configuration production --base-href /ad/"
+    "build:github-pages": "ng build --configuration production --base-href /"
   },
   "prettier": {
     "printWidth": 100,
