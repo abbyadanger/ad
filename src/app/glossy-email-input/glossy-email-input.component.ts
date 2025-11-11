@@ -9,24 +9,41 @@ import { SupabaseService } from '../services/supabase.service';
   imports: [FormsModule, CommonModule],
   styleUrl: './glossy-email-input.component.css',
   template: `
-    <form class="email-form" (ngSubmit)="onSubmit($event)" *ngIf="!showSuccessMessage">
-      <input
-        type="email"
-        class="glossy-email-input"
-        [(ngModel)]="email"
-        placeholder="enter your email"
-        name="email"
-        required
-      >
+    <!-- Initial subscribe button -->
+    <div *ngIf="!showInputField && !showSuccessMessage" class="initial-button-container">
       <button 
-        type="submit" 
+        type="button" 
         class="glossy-submit-arrow" 
-        aria-label="Submit email">
-        subscribe
+        (click)="showInput()"
+        aria-label="Show email input">
+        subscribe 🔔
       </button>
+    </div>
+
+    <!-- Email form with input -->
+    <form class="email-form" (ngSubmit)="onSubmit($event)" *ngIf="showInputField && !showSuccessMessage">
+      <div class="input-container">
+        <input
+          type="email"
+          class="glossy-email-input"
+          [(ngModel)]="email"
+          placeholder="enter your email"
+          name="email"
+          #emailInput
+          required
+        >
+        <button 
+          type="submit" 
+          class="glossy-submit-inside" 
+          aria-label="Submit email">
+          →
+        </button>
+      </div>
     </form>
-    <div *ngIf="showSuccessMessage" class="success-message">
-      ✓ Thank you for subscribing!
+
+    <!-- Success message -->
+    <div *ngIf="showSuccessMessage" class="success-message" (click)="resetForm()">
+      Thank you for subscribing!
     </div>
   `,
 })
@@ -36,8 +53,20 @@ export class GlossyEmailInputComponent {
 
   email: string = '';
   showSuccessMessage: boolean = false;
+  showInputField: boolean = false;
 
   constructor(private supabaseService: SupabaseService) {}
+
+  showInput() {
+    this.showInputField = true;
+    // Focus the input field after it appears
+    setTimeout(() => {
+      const input = document.querySelector('.glossy-email-input') as HTMLInputElement;
+      if (input) {
+        input.focus();
+      }
+    }, 100);
+  }
 
   async onSubmit(event: Event) {
     event.preventDefault();
@@ -46,15 +75,15 @@ export class GlossyEmailInputComponent {
     if (!this.email.trim()) {
       return;
     }
-
     // Show success message immediately
     this.showSuccessMessage = true;
     // Save email to database in background (don't wait)
     this.supabaseService.addEmailToDatabase(this.email);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      this.showSuccessMessage = false;
-      this.email = '';
-    }, 3000);
+  }
+
+  resetForm() {
+    this.showSuccessMessage = false;
+    this.showInputField = false;
+    this.email = '';
   }
 }
