@@ -27,7 +27,7 @@ import { SupabaseService } from '../services/supabase.service';
           type="email"
           class="glossy-email-input"
           [(ngModel)]="email"
-          placeholder="enter your email"
+          placeholder="enter email address"
           name="email"
           #emailInput
           required
@@ -43,12 +43,12 @@ import { SupabaseService } from '../services/supabase.service';
 
     <!-- Success message -->
     <div *ngIf="showSuccessMessage" class="success-message" (click)="resetForm()">
-      <span class="material-icons">check_circle</span> Thank you for subscribing!
+      <span class="material-icons">check_circle</span> subscribed
     </div>
   `,
 })
 export class GlossyEmailInputComponent {
-  @Input() placeholder: string = 'enter your email';
+  @Input() placeholder: string = 'enter email address';
   @Output() emailSubmitted = new EventEmitter<string>();
 
   email: string = '';
