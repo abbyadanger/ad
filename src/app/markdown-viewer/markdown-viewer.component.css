@@ -59,11 +59,15 @@ a:hover, a:focus {
   }
 }
 
+/* Arrow Styling */
 .arrow {
-  font-size: medium;
   text-align: right;
   display: flex;
   justify-content: flex-end;
+}
+
+.arrow .material-icons {
+  font-size: 12px; /* Makes the keyboard_return icon smaller */
 }
 
 .footer-msg {

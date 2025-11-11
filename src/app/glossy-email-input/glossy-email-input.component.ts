@@ -16,7 +16,7 @@ import { SupabaseService } from '../services/supabase.service';
         class="glossy-submit-arrow" 
         (click)="showInput()"
         aria-label="Show email input">
-        subscribe 🔔
+        subscribe <span class="material-icons">notifications</span>
       </button>
     </div>
 
@@ -36,14 +36,14 @@ import { SupabaseService } from '../services/supabase.service';
           type="submit" 
           class="glossy-submit-inside" 
           aria-label="Submit email">
-          →
+          <span class="material-icons">arrow_forward</span>
         </button>
       </div>
     </form>
 
     <!-- Success message -->
     <div *ngIf="showSuccessMessage" class="success-message" (click)="resetForm()">
-      Thank you for subscribing!
+      <span class="material-icons">check_circle</span> Thank you for subscribing!
     </div>
   `,
 })

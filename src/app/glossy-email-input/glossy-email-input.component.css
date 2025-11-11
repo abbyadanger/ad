@@ -104,10 +104,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   padding: 0 12px;
   box-shadow: 
     0 2px 8px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glossy-submit-arrow .material-icons {
+  font-size: 16px;
 }
 
 /* Submit Button Inside Input */
@@ -130,6 +135,10 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+}
+
+.glossy-submit-inside .material-icons {
+  font-size: 16px;
 }
 
 .glossy-submit-arrow:hover {
@@ -175,6 +184,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   padding: 8px 16px;
   border-radius: 12px;
   background: rgba(34, 197, 94, 0.2);
@@ -185,10 +195,15 @@
   font-size: 12px;
   font-weight: 500;
   font-family: inherit;
+  cursor: pointer;
   box-shadow: 
     0 4px 16px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   animation: fadeInScale 0.4s ease-out;
+}
+
+.success-message .material-icons {
+  font-size: 16px;
 }
 
 @keyframes fadeInScale {
