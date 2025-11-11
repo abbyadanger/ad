@@ -34,6 +34,7 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.1",
+    "@emailjs/browser": "^4.4.1",
     "@types/dompurify": "^3.0.5",
     "dompurify": "^3.2.6",
     "express": "^5.1.0",

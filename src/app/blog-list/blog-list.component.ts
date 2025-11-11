@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-// import { GlossyEmailInputComponent } from '../glossy-email-input/glossy-email-input.component';
+import { GlossyEmailInputComponent } from '../glossy-email-input/glossy-email-input.component';
 
 export interface BlogData {
   posts: {
@@ -19,9 +19,7 @@ export interface BlogData {
 @Component({
   selector: 'app-blog-list',
   standalone: true,
-  imports: [RouterModule, CommonModule,
-    // GlossyEmailInputComponent
-  ],
+  imports: [RouterModule, CommonModule, GlossyEmailInputComponent],
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
