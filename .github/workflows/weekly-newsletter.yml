@@ -36,6 +36,7 @@ jobs:
         node -e "
         const { createClient } = require('@supabase/supabase-js');
         const emailjs = require('@emailjs/nodejs');
+        const fs = require('fs');
         
         async function sendWeeklyNewsletter() {
           try {
@@ -47,6 +48,37 @@ jobs:
             console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID ? 'Set' : 'Missing');
             console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing');
             console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Set' : 'Missing');
+            
+            // Load and filter blog posts from the past week
+            console.log('📚 Loading blog posts...');
+            const blogPostsData = JSON.parse(fs.readFileSync('public/blog-posts.json', 'utf8'));
+            
+            // Get current date and one week ago
+            const now = new Date();
+            const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+            
+            // Filter published posts from the past week
+            const recentPosts = blogPostsData.posts.filter(post => {
+              if (!post.published || !post.dateFormatted) return false;
+              
+              // Parse the date format (MM.DD.YYYY)
+              const [month, day, year] = post.dateFormatted.split('.');
+              const postDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+              
+              return postDate >= oneWeekAgo && postDate <= now;
+            });
+            
+            console.log(\`Found \${recentPosts.length} posts from the past week\`);
+            
+            // Generate message with blog post links
+            let message = '';
+            if (recentPosts.length > 0) {
+              message = recentPosts.map(post => 
+                \`📝 <a href=\"https://abbydanger.com/blog/\${post.slug}\" style=\"color: #2c5f73; text-decoration: underline;\">\${post.title}</a>\`
+              ).join('<br>');
+            } else {
+              message = 'No new posts this week, but I\\'m always working on something new!';
+            }
             
             // Initialize Supabase
             const supabase = createClient(
@@ -88,9 +120,9 @@ jobs:
                     process.env.EMAILJS_TEMPLATE_ID,
                     {
                       to_email: subscriber.email,
-                      subject: 'Hello World!',
-                      message: 'Hello World!',
-                      from_name: 'Abby Danger Blog'
+                      subject: 'Weekly Blog Update from Abby Danger',
+                      message: message,
+                      from_name: 'Abby Danger'
                     },
                     {
                       publicKey: process.env.EMAILJS_PUBLIC_KEY,
