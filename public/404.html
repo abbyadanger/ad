@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>Abby Danger</title>
-  <base href="/ad/">
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="ad.png">
   <script>
-    // GitHub Pages SPA redirect for /ad/ repository
+    // GitHub Pages SPA redirect for custom domain
     var l = window.location;
     var path = l.pathname;
     
-    // Remove /ad/ from the beginning and encode the rest as a query parameter
-    var redirectPath = path.replace('/ad/', '');
-    
-    if (redirectPath) {
+    if (path && path !== '/') {
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/ad/?/' + redirectPath.replace(/&/g, '~and~') +
+        '/?/' + path.slice(1).replace(/&/g, '~and~') +
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
     } else {
       // Just redirect to the root if no path
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/ad/');
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
     }
   </script>
 </head>
