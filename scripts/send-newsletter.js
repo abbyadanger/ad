@@ -60,7 +60,7 @@ async function sendWeeklyNewsletter() {
             <img src="https://abbydanger.com/ad.png" alt="Abby Danger Logo" style="width: 60px; height: 60px;">
           </div>
           <p>Hi there 👋</p>
-          <p>No new posts this week, but maybe next week ... if I feel like it 😉</p>
+          <p>No new posts this week - Maybe next week 😉</p>
           <p>Read more at <a href="https://abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>
           <p>Talk Soon,<br>A</p>
         </div>
