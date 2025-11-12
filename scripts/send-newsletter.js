@@ -41,12 +41,30 @@ async function sendWeeklyNewsletter() {
         `📝 <a href="https://abbydanger.com/blog/${post.slug}" style="color: #2c5f73; text-decoration: underline;">${post.title}</a>`
       ).join('<br>');
       
-      message = `<p>Here's what I wrote about on the blog this week:</p>
-      <p>${postLinks}</p>
-      <p>Read more at <a href="abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>`;
+      message = `
+        <div style="font-family: 'Quicksand', sans-serif; background-color: white; color: #2c5f73; padding: 16px; line-height: 1.4; border-radius: 8px;">
+          <div style="text-align: left; margin-bottom: 16px;">
+            <img src="https://abbydanger.com/ad.png" alt="Abby Danger Logo" style="width: 60px; height: 60px;">
+          </div>
+          <p>Hi there 👋</p>
+          <p>Here's what I wrote about on the blog this week:</p>
+          <p>${postLinks}</p>
+          <p>Read more at <a href="https://abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>
+          <p>Talk Soon,<br>A</p>
+        </div>
+      `;
     } else {
-      message = `<p>No new posts this week, but maybe next week ... if I feel like it 😉</p>
-      <p>Read more at <a href="abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>`;
+      message = `
+        <div style="font-family: 'Quicksand', sans-serif; background-color: white; color: #2c5f73; padding: 16px; line-height: 1.4; border-radius: 8px;">
+          <div style="text-align: left; margin-bottom: 16px;">
+            <img src="https://abbydanger.com/ad.png" alt="Abby Danger Logo" style="width: 60px; height: 60px;">
+          </div>
+          <p>Hi there 👋</p>
+          <p>No new posts this week, but maybe next week ... if I feel like it 😉</p>
+          <p>Read more at <a href="https://abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>
+          <p>Talk Soon,<br>A</p>
+        </div>
+      `;
     }
     
     // Initialize Supabase
