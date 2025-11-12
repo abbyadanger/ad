@@ -51,7 +51,7 @@ jobs:
             
             // Load and filter blog posts from the past week
             console.log('📚 Loading blog posts...');
-            const blogPostsData = JSON.parse(fs.readFileSync='public/blog-posts.json', 'utf8'));
+            const blogPostsData = JSON.parse(fs.readFileSync='public/blog-posts.json', 'utf8');
             
             // Get current date and one week ago
             const now = new Date();
@@ -86,7 +86,7 @@ jobs:
             }
             
             // Initialize Supabase
-            const supabase = createClient(99999999999999999999999999
+            const supabase = createClient(
               process.env.SUPABASE_URL, 
               process.env.SUPABASE_KEY
             );
