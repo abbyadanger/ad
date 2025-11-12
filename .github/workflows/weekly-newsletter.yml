@@ -51,7 +51,7 @@ jobs:
             
             // Load and filter blog posts from the past week
             console.log('📚 Loading blog posts...');
-            const blogPostsData = JSON.parse(fs.readFileSync('public/blog-posts.json', 'utf8'));
+            const blogPostsData = JSON.parse(fs.readFileSync='public/blog-posts.json', 'utf8'));
             
             // Get current date and one week ago
             const now = new Date();
@@ -73,15 +73,20 @@ jobs:
             // Generate message with blog post links
             let message = '';
             if (recentPosts.length > 0) {
-              message = recentPosts.map(post => 
+              const postLinks = recentPosts.map(post => 
                 \`📝 <a href=\"https://abbydanger.com/blog/\${post.slug}\" style=\"color: #2c5f73; text-decoration: underline;\">\${post.title}</a>\`
               ).join('<br>');
+              
+              message = \`<p>Here's what I wrote about on the blog this week:</p>
+              <p>\${postLinks}</p>
+              <p>Read more at <a href=\"abbydanger.com/blog\" target=\"_blank\" rel=\"noopener\" style=\"color: #2c5f73; text-decoration: underline;\">abbydanger.com/blog</a></p>\`;
             } else {
-              message = 'No new posts this week, but I\\'m always working on something new!';
+              message = \`<p>No new posts this week, but maybe next week ... if I feel like it 😉</p>
+              <p>Read more at <a href=\"abbydanger.com/blog\" target=\"_blank\" rel=\"noopener\" style=\"color: #2c5f73; text-decoration: underline;\">abbydanger.com/blog</a></p>\`;
             }
             
             // Initialize Supabase
-            const supabase = createClient(
+            const supabase = createClient(99999999999999999999999999
               process.env.SUPABASE_URL, 
               process.env.SUPABASE_KEY
             );
