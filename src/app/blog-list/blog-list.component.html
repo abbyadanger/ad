@@ -16,7 +16,7 @@
             <table class="blog-posts" *ngIf="posts().length > 0">
                 <tr *ngFor="let post of posts()">
                     <td>
-                        <a [routerLink]="['/blog', post.filename]">{{ post.title }}</a>
+                        <a [routerLink]="['/blog', post.slug]">{{ post.title }}</a>
                     </td>
                     <td>
                         <div class="post-tags" *ngIf="post.tags.length > 0">

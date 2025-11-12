@@ -53,26 +53,27 @@ export class MarkdownViewerComponent implements OnInit {
     this.loading.set(true);
     this.error.set(null);
     try {
-      // Load both markdown content and metadata in parallel
-      const [mdResponse, metadataResponse] = await Promise.all([
-        fetch(`docs/${this.filename()}`, { cache: 'no-cache' }),
-        fetch('blog-posts.json', { cache: 'no-cache' })
-      ]);
-
-      if (!mdResponse.ok) throw new Error(`HTTP ${mdResponse.status}`);
+      // First load metadata to find the filename from the slug
+      const metadataResponse = await fetch('blog-posts.json', { cache: 'no-cache' });
       if (!metadataResponse.ok) throw new Error(`Failed to load metadata: HTTP ${metadataResponse.status}`);
 
-      const md = await mdResponse.text();
       const blogData: BlogData = await metadataResponse.json();
 
-      // Find the post metadata for this file
-      const postMeta = blogData.posts.find(post => post.filename === this.filename());
-      if (postMeta) {
-        this.postMetadata.set(postMeta);
-        this.title.set(postMeta.title);
-        this.date.set(postMeta.dateFormatted);
-        this.tags.set(postMeta.tags);
-      }
+      // Find the post metadata by slug (the filename() is actually the slug now)
+      const postMeta = blogData.posts.find(post => post.slug === this.filename());
+      if (!postMeta) throw new Error(`Post not found: ${this.filename()}`);
+
+      // Set metadata
+      this.postMetadata.set(postMeta);
+      this.title.set(postMeta.title);
+      this.date.set(postMeta.dateFormatted);
+      this.tags.set(postMeta.tags);
+
+      // Now load the markdown file using the actual filename
+      const mdResponse = await fetch(`docs/${postMeta.filename}`, { cache: 'no-cache' });
+      if (!mdResponse.ok) throw new Error(`HTTP ${mdResponse.status}`);
+
+      const md = await mdResponse.text();
 
       // Process markdown
       const rawHtml = marked.parse(md) as string;
