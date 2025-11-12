@@ -95,11 +95,14 @@ jobs:
                     }
                   );
                   
-                  console.log(\`  ✓ \${subscriber.email} - Result:, result\`);
+                  console.log(\`  ✓ \${subscriber.email} - Result:\`, result);
                   sent++;
                 } catch (emailError) {
-                  console.error(\`  ✗ \${subscriber.email}: \${emailError}\`);
-                  console.error(\`Full error:, emailError\`);
+                  console.error(\`  ✗ \${subscriber.email}: \${emailError.message || 'Unknown error'}\`);
+                  console.error('Full error object:', JSON.stringify(emailError, null, 2));
+                  console.error('Error name:', emailError.name);
+                  console.error('Error status:', emailError.status);
+                  console.error('Error text:', emailError.text);
                   failed++;
                 }
               });
