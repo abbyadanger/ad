@@ -31,6 +31,7 @@ jobs:
         EMAILJS_SERVICE_ID: 'service_fgmh6c5'
         EMAILJS_TEMPLATE_ID: 'template_zmw8pd9'
         EMAILJS_PUBLIC_KEY: 'Aol5sZm8-YIcx43oi'
+        EMAILJS_PRIVATE_KEY: 'PFdL6M9xONS55-rIEl0eh'
       run: |
         node -e "
         const { createClient } = require('@supabase/supabase-js');
@@ -45,6 +46,7 @@ jobs:
             console.log('EMAILJS_SERVICE_ID:', process.env.EMAILJS_SERVICE_ID ? 'Set' : 'Missing');
             console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID ? 'Set' : 'Missing');
             console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing');
+            console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Set' : 'Missing');
             
             // Initialize Supabase
             const supabase = createClient(
@@ -92,6 +94,7 @@ jobs:
                     },
                     {
                       publicKey: process.env.EMAILJS_PUBLIC_KEY,
+                      privateKey: process.env.EMAILJS_PRIVATE_KEY,
                     }
                   );
                   
