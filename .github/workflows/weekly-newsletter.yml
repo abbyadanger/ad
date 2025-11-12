@@ -58,11 +58,18 @@ jobs:
             };
             
             const req = https.request(requestOptions, (res) => {
-              if (res.statusCode === 200) {
-                resolve('Email sent');
-              } else {
-                reject(new Error(\`HTTP \${res.statusCode}\`));
-              }
+              let responseData = '';
+              res.on('data', (chunk) => {
+                responseData += chunk;
+              });
+              
+              res.on('end', () => {
+                if (res.statusCode === 200) {
+                  resolve('Email sent');
+                } else {
+                  reject(new Error(\`HTTP \${res.statusCode}: \${responseData}\`));
+                }
+              });
             });
             
             req.on('error', reject);
@@ -96,17 +103,22 @@ jobs:
               
               const batchPromises = batch.map(async (subscriber) => {
                 try {
+                  console.log(\`Sending to: \${subscriber.email}\`);
                   await sendEmail(
                     process.env.EMAILJS_SERVICE_ID,
                     process.env.EMAILJS_TEMPLATE_ID,
                     {
                       to_email: subscriber.email,
+                      subject: 'Hello World!',
+                      message: 'Hello World!',
+                      from_name: 'Abby Danger Blog'
                     },
                     {
                       publicKey: process.env.EMAILJS_PUBLIC_KEY,
                     }
                   );
                   
+                  console.log(\`  ✓ \${subscriber.email}\`);
                   sent++;
                 } catch (emailError) {
                   console.error(\`  ✗ \${subscriber.email}: \${emailError.message}\`);
