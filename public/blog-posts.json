@@ -17,7 +17,7 @@
       "dateFormatted": "11.12.2025",
       "slug": "blog-updates",
       "tags": ["tech", "updates", "code"],
-      "published": true,
+      "published": false,
       "readTime": null
     }
   ]
