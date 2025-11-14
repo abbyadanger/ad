@@ -11,13 +11,13 @@
       "readTime": null
     },
     {
-      "id": "read-time",
-      "filename": "read-time.md",
-      "title": "How I Built a Read Time Calculator",
-      "dateFormatted": "11.7.2025",
-      "slug": "read-time",
-      "tags": ["tech"],
-      "published": false,
+      "id": "blog-updates",
+      "filename": "blog-updates.md",
+      "title": "Blog Updates",
+      "dateFormatted": "11.12.2025",
+      "slug": "blog-updates",
+      "tags": ["tech", "updates", "code"],
+      "published": true,
       "readTime": null
     }
   ]
