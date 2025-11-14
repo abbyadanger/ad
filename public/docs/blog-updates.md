@@ -30,7 +30,7 @@ Aside from the button itself, there is the input box. Ideally, you will enter yo
 
 The next piece is having a place to store all the email addresses. I created a free database using [Supabase](https://supabase.com/) - The table is just called emails .… and it literally just stores emails. So whenever someone subscribes, their email shows up in here. Currently there are a whopping **4 subscribers** (including myself, of course)
 
-<img src="docs/pics/emails.png" width="400px">
+<img src="docs/pics/emails.png" width="60%">
 
 So that's it. You click subscribe, enter your email (or whatever you want), the email gets added to a database, and then you see the success message - Life can be so simple.
 ### Weekly Newsletter
@@ -38,7 +38,7 @@ I mean no one asked for a weekly newsletter but hey why not ... right? This was 
 
 I was actually really happy with how this turned out ... btw did you sign up yet?
 
-<img src="docs/pics/newsletter.png" width="300px">
+<img src="docs/pics/newsletter.png" width="60%">
 
 #### How it works
 Using EmailJS (freeeeeeeee) up to 200 emails a month which is so perfect for just a small little girl blog like this one.
