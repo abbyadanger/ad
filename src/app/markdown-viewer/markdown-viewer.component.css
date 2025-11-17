@@ -79,7 +79,15 @@ a:hover, a:focus {
 }
 
 article {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2c5f73;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 20px 0;
+  line-height: 1.6;
+  font-family: "Quicksand", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 /* Post Metadata Styling */
@@ -146,7 +154,55 @@ article {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Article Hyperlink Styling */
+/* Article Content Styling */
 ::ng-deep article a {
-  color: #FFFFFF !important;
+  color: #2c5f73 !important;
+  text-decoration-color: #86bbd8;
+}
+
+::ng-deep article a:hover,
+::ng-deep article a:focus {
+  text-decoration-color: #2c5f73;
+}
+
+::ng-deep article img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  margin: 16px 0;
+}
+
+::ng-deep article h1,
+::ng-deep article h2,
+::ng-deep article h3,
+::ng-deep article h4,
+::ng-deep article h5,
+::ng-deep article h6 {
+  color: #2c5f73;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+::ng-deep article code {
+  background-color: #f5f5f5;
+  color: #2c5f73;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+::ng-deep article pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+::ng-deep article blockquote {
+  border-left: 4px solid #86bbd8;
+  margin: 16px 0;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  font-style: italic;
 }
