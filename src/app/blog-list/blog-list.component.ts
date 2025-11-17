@@ -45,7 +45,15 @@ export class BlogListComponent implements OnInit {
       // Filter for published posts & sort by date (newest first)
       const publishedPosts = blogData.posts
         .filter(post => post.published)
-        .sort((a, b) => new Date(b.dateFormatted).getTime() - new Date(a.dateFormatted).getTime());
+        .sort((a, b) => {
+          // Parse MM.DD.YYYY format
+          const parseDate = (dateStr: string) => {
+            const [month, day, year] = dateStr.split('.');
+            return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+          };
+          
+          return parseDate(b.dateFormatted).getTime() - parseDate(a.dateFormatted).getTime();
+        });
       
       this.posts.set(publishedPosts);
     } catch (e: any) {
