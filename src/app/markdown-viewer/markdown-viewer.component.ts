@@ -70,7 +70,7 @@ export class MarkdownViewerComponent implements OnInit {
       this.tags.set(postMeta.tags);
 
       // Now load the markdown file using the actual filename
-      const mdResponse = await fetch(`docs/${postMeta.filename}`, { cache: 'no-cache' });
+      const mdResponse = await fetch(`docs/published/${postMeta.filename}`, { cache: 'no-cache' });
       if (!mdResponse.ok) throw new Error(`HTTP ${mdResponse.status}`);
 
       const md = await mdResponse.text();

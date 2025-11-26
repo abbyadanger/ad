@@ -15,12 +15,12 @@ const angularApp = new AngularNodeAppEngine();
 import fs from 'fs';
 import path from 'path';
 
-// API endpoint to list markdown files in public/docs
+// API endpoint to list markdown files in public/docs/published
 app.get('/api/docs-list', (req, res) => {
-  const docsDir = path.join(import.meta.dirname, '../public/docs');
+  const docsDir = path.join(import.meta.dirname, '../public/docs/published');
   fs.readdir(docsDir, (err, files) => {
     if (err) return res.status(500).json({ error: 'Failed to read docs directory' });
-    const mdFiles = files.filter(f => f.endsWith('.md')).map(f => `docs/${f}`);
+    const mdFiles = files.filter(f => f.endsWith('.md')).map(f => `docs/published/${f}`);
     res.json(mdFiles);
   });
 });

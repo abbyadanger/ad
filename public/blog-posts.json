@@ -19,6 +19,16 @@
       "tags": ["tech", "updates", "code"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "motherhood",
+      "filename": "motherhood.md",
+      "title": "Motherhood",
+      "dateFormatted": "11.24.2025",
+      "slug": "motherhood",
+      "tags": ["life", "cats", "responsibility"],
+      "published": true,
+      "readTime": null
     }
   ]
 }
