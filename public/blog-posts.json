@@ -39,6 +39,16 @@
       "tags": ["short", "quick"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "writing-flow",
+      "filename": "writing-flow.md",
+      "title": "My Writing + Posting Flow",
+      "dateFormatted": "12.5.2025",
+      "slug": "writing-flow",
+      "tags": ["how", "process", "tech", "code"],
+      "published": true,
+      "readTime": null
     }
   ]
 }
