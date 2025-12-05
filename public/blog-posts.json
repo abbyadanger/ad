@@ -29,6 +29,16 @@
       "tags": ["life", "cats", "responsibility"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "writing-hard",
+      "filename": "writing-hard.md",
+      "title": "Writing is Hard",
+      "dateFormatted": "12.4.2025",
+      "slug": "writing-is-hard",
+      "tags": ["short", "quick"],
+      "published": true,
+      "readTime": null
     }
   ]
 }
