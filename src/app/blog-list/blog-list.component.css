@@ -64,18 +64,6 @@ a:hover, a:focus {
   width: 100%;
 }
 
-.blog-posts td:first-child {
-  width: 60%;
-}
-
-.blog-posts td:nth-child(2) {
-  width: 25%;
-}
-
-.blog-posts td:last-child {
-  width: 15%;
-}
-
 .date {
   text-align: right;
   vertical-align: top;
