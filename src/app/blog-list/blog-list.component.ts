@@ -42,17 +42,12 @@ export class BlogListComponent implements OnInit {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const blogData: BlogData = await response.json();
       
-      // Filter for published posts & sort by date (newest first)
+      // Filter for published posts & sort by ID number (descending)
       const publishedPosts = blogData.posts
         .filter(post => post.published)
         .sort((a, b) => {
-          // Parse MM.DD.YYYY format
-          const parseDate = (dateStr: string) => {
-            const [month, day, year] = dateStr.split('.');
-            return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
-          };
-          
-          return parseDate(b.dateFormatted).getTime() - parseDate(a.dateFormatted).getTime();
+          // Sort by ID number in descending order (..., 3, 2, 1)
+          return parseInt(b.id) - parseInt(a.id);
         });
       
       this.posts.set(publishedPosts);
