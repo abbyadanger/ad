@@ -59,6 +59,16 @@
       "tags": ["moment"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "06",
+      "filename": "minimal.md",
+      "title": "Less is More",
+      "dateFormatted": "12.13.2025",
+      "slug": "minimal",
+      "tags": ["minimal", "design", "tech"],
+      "published": true,
+      "readTime": null
     }
   ]
 }
