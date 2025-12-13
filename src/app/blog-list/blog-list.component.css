@@ -1,5 +1,5 @@
 .content {
-  max-width: 600px;
+  max-width: 450px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: "Quicksand", sans-serif;
@@ -36,7 +36,7 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   text-decoration-color: #86bbd8; /* light gray underline */
   transition: text-decoration-color 0.2s;
@@ -87,11 +87,11 @@ a:hover, a:focus {
   margin-right: 8px;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .post-tags {
     display: none;
   }
-}
+} */
 
 /* Arrow Styling */
 .arrow {

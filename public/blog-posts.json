@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": "welcome",
+      "id": "00",
       "filename": "welcome.md",
       "title": "Welcome to the blog :O",
       "dateFormatted": "10.28.2025",
@@ -11,7 +11,7 @@
       "readTime": null
     },
     {
-      "id": "blog-updates",
+      "id": "01",
       "filename": "blog-updates.md",
       "title": "Blog Updates",
       "dateFormatted": "11.17.2025",
@@ -21,7 +21,7 @@
       "readTime": null
     },
     {
-      "id": "motherhood",
+      "id": "02",
       "filename": "motherhood.md",
       "title": "Motherhood",
       "dateFormatted": "11.24.2025",
@@ -31,7 +31,7 @@
       "readTime": null
     },
     {
-      "id": "writing-hard",
+      "id": "03",
       "filename": "writing-hard.md",
       "title": "Writing is Hard",
       "dateFormatted": "12.4.2025",
@@ -41,7 +41,7 @@
       "readTime": null
     },
     {
-      "id": "writing-flow",
+      "id": "04",
       "filename": "writing-flow.md",
       "title": "My Writing + Posting Flow",
       "dateFormatted": "12.5.2025",
@@ -51,7 +51,7 @@
       "readTime": null
     },
     {
-      "id": "moment-1",
+      "id": "05",
       "filename": "moment-1.md",
       "title": "\"Nap Time\"",
       "dateFormatted": "12.5.2025",
