@@ -87,6 +87,12 @@ a:hover, a:focus {
   margin-right: 8px;
 }
 
+@media (max-width: 600px) {
+  .post-tags {
+    display: none;
+  }
+}
+
 /* Arrow Styling */
 .arrow {
   font-size: medium;

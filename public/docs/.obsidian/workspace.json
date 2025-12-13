@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "d79a182da914c16b",
+        "id": "ff174f4f54073309",
         "type": "tabs",
         "children": [
           {
-            "id": "aae56c539be1add8",
+            "id": "da5fd13b612e6095",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "published/moment-1.md",
+                "file": "in-progress/2026-resolutions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "moment-1"
+              "title": "2026-resolutions"
+            }
+          },
+          {
+            "id": "8729d98a73d40f83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "in-progress/make-yourself-uncomfortable.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "make-yourself-uncomfortable"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,10 +198,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "aae56c539be1add8",
+  "active": "8729d98a73d40f83",
   "lastOpenFiles": [
-    "pics/moment.jpg",
+    "in-progress/2026-resolutions.md",
+    "in-progress/make-yourself-uncomfortable.md",
     "published/moment-1.md",
+    "pics/moment.jpg",
     "published/motherhood.md",
     "published/blog-updates.md",
     "published/welcome.md",
@@ -202,7 +219,6 @@
     "pics/obsidian2.png",
     "in-progress/Normal Text Editor.md",
     "pics/obsidian.png",
-    "in-progress/2026-resolutions.md",
     "in-progress/new-beanie.md",
     "in-progress/Learning Chess - Part 1.md",
     "pics/~ats-coffee.tmp",
