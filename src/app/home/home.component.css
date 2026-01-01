@@ -19,6 +19,7 @@ main {
   display: flex;
   font-size: xx-large;
   color: #86bbd8;
+  font-family: "Quicksand", sans-serif;
   /* color: #CBD183; */ /* lime green color */
 }
 

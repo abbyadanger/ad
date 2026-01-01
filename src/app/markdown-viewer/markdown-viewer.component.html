@@ -12,18 +12,16 @@
         
         <!-- Post Metadata -->
         <div *ngIf="!loading() && !error() && postMetadata()" class="post-metadata">
-          <h2 class="post-title">{{ title() }}</h2>
-          <div class="post-info">
-            <span class="post-date">{{ date() }}</span>
-            •
-            <span class="read-time">{{ readTime() }}</span>
-          </div>
-          <div class="post-tags" *ngIf="tags().length > 0">
-            <span class="tag" *ngFor="let tag of tags()">#{{ tag }}</span>
-          </div>
+          <p class="post-title">{{ title() }}</p>
+          <p class="post-date">{{ date() }}</p>
+          <p>-</p>
         </div>
         
+        <!-- Post Content -->
         <article [innerHTML]="html()"></article>
+        <p>-</p>
+
+        <!-- Back Arrow -->
         <div class="arrow">
             <a routerLink="/blog">
               <p>posts <span class="material-icons">keyboard_return</span></p>

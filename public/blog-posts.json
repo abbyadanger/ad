@@ -69,6 +69,16 @@
       "tags": ["minimal", "design", "tech"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "07",
+      "filename": "some-protector.md",
+      "title": "Some Protector",
+      "dateFormatted": "12.29.2025",
+      "slug": "some-protector",
+      "tags": ["test", "font", "title"],
+      "published": true,
+      "readTime": null
     }
   ]
 }

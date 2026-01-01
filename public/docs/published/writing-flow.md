@@ -1,13 +1,16 @@
 
 Here's my writing + posting ***flow***
 
-## Idea
+Idea
+
 Seems self explanatory, but this is step one. I have a thought. I love to have thoughts. I have many.
 
-## Write & Edit
+Write & Edit
+
 Time to write said thought. This part usually happens in the morning before work, sitting at my kitchen table, with a coffee 💓
 
-### Editor
+Editor
+
 As soon as I decided on how this flow would work, I knew that finding a good text/markdown editor would be imperative.
 
 I tried a few different ones but ultimately decided on [Obsidian](https://obsidian.md/) - I actually love this tool a lot! The UI is intuitive, clean, minimal, adaptive, etc.
@@ -24,10 +27,12 @@ One huge perk of using Obsidian has been the ability to setup my [vault](https:/
 
 There's even more to Obsidian ([graphing](https://help.obsidian.md/plugins/graph), [canvas](https://help.obsidian.md/plugins/canvas), [plugins](https://help.obsidian.md/plugins), etc.) but for the ye olde **[ad blog](https://abbydanger.com/blog)** the text editor is all I really need from it.
 
-## Repository Updates
+Repository Updates
+
 After I write something beautiful and profound in Obsidian, I hop over to VS Code  to update my repository (repository = codebase)
 
-### In VS Code
+In VS Code
+
 The only thing I have to do here is update a single file with metadata about my new post - For example, the metadata for this post is as follows:
 ```
 {
@@ -46,13 +51,15 @@ After that, I just have to commit & push the changes to my repository. You'll no
 
 <img src="docs/pics/vscode.png" width="60%">
 
-### The Pipeline
+The Pipeline
+
 After I commit & push everything, the pipeline runs. It usually takes ~3 minutes. Then my changes will be *live* on [abbydanger.com](abbydanger.com)
 
 <img src="docs/pics/pipeline.png" width="60%">
 <img src="docs/pics/pipeline2.png" width="60%">
 
-### So That's It
+So That's It
+
 That's how every blog post is born 👶
 
 There's probably so much room for improvement here and I'm not really sure how other people/blogs are doing it, but this is how I'm doing it 😉 I just sort of thought of it and then created it. Not too shabby.

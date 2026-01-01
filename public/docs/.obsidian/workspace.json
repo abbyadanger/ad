@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "published/minimal.md",
+                "file": "published/blog-updates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "minimal"
+              "title": "blog-updates"
             }
           }
         ]
@@ -183,30 +183,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "a665e7fba0e28afe",
+  "active": "29b8ce8bfa4f8d92",
   "lastOpenFiles": [
-    "published/motherhood.md",
     "published/minimal.md",
+    "published/writing-flow.md",
+    "published/welcome.md",
+    "published/some-protector.md",
+    "published/blog-updates.md",
+    "hi.txt.md",
+    "published/some-protector.txt.md",
+    "published/some-protector 1.md",
+    "in-progress/Normal Text Editor.md",
+    "in-progress/make-yourself-uncomfortable.md",
+    "published/motherhood.md",
     "pics/good-design.png",
     "published/writing-hard.md",
-    "in-progress/make-yourself-uncomfortable.md",
     "pics/bad-design.png",
     "in-progress/2026-resolutions.md",
     "().md",
     "published/moment-1.md",
     "pics/moment.jpg",
-    "published/blog-updates.md",
-    "published/welcome.md",
-    "in-progress/some-protector.md",
     "pics/Unconfirmed 543366.crdownload",
-    "published/writing-flow.md",
     "pics/mobile.png",
     "pics/Unconfirmed 452567.crdownload",
     "pics/pipeline2.png",
     "pics/pipeline.png",
     "pics/vscode.png",
     "pics/obsidian2.png",
-    "in-progress/Normal Text Editor.md",
     "pics/obsidian.png",
     "in-progress/new-beanie.md",
     "in-progress/Learning Chess - Part 1.md",
