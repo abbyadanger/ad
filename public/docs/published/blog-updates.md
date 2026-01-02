@@ -57,8 +57,4 @@ The best part about this, is that the only thing I have to do ... is write 😵 
 ### Fin
 OK that's it. I really like writing and articulating the things I code. Sorry probably a little boring. Maybe no one even read this far ... lol
 
-Bye!
-
--A
-
 

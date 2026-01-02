@@ -19,6 +19,3 @@ I guess I don't have anything else to say other than I'm proud of myself for fin
 Thanks if you read this, maybe you'll read more. It's OK if you don't though.
 
 Bye.
-
-
--A
