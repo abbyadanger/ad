@@ -1,1 +1,0 @@
-The art of being uncomfortable is so uncommon in 

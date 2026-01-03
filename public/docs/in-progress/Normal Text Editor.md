@@ -1,1 +1,0 @@
-Wow this text editor is so normal and I'm soooo happy I don't have to write in markdown syntax because that really sucks.

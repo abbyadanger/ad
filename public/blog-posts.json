@@ -69,6 +69,16 @@
       "tags": ["minimal", "design", "tech"],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "07",
+      "filename": "2026-resolutions.md",
+      "title": "2026 Resolutions",
+      "dateFormatted": "1.2.2026",
+      "slug": "2026-resolutions",
+      "tags": [],
+      "published": true,
+      "readTime": null
     }
   ]
 }
