@@ -79,6 +79,16 @@
       "tags": [],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "08",
+      "filename": "lagom.md",
+      "title": "Lagom",
+      "dateFormatted": "1.8.2026",
+      "slug": "lagom",
+      "tags": [],
+      "published": true,
+      "readTime": null
     }
   ]
 }

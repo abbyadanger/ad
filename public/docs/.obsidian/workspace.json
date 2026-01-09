@@ -4,52 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "ee2ca2cac9be44d0",
+        "id": "0001a98ef9855629",
         "type": "tabs",
         "children": [
           {
-            "id": "790bdd9440f1be9b",
+            "id": "8babd1ea3db1a792",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "published/2026-resolutions.md",
+                "file": "in-progress/get-off-phone.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-resolutions"
+              "title": "get-off-phone"
             }
           },
           {
-            "id": "3c77d742ecec59c5",
+            "id": "c1e693e4eaea5257",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "in-progress/pintrest-supremacy.md",
+                "file": "published/lagom.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pintrest-supremacy"
-            }
-          },
-          {
-            "id": "1f192c046100291a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "in-progress/hobby-collector.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "hobby-collector"
+              "title": "lagom"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -213,11 +200,15 @@
   },
   "active": "a665e7fba0e28afe",
   "lastOpenFiles": [
-    "in-progress/pintrest-supremacy.md",
-    "published/2026-resolutions.md",
     "in-progress/hobby-collector.md",
-    "lagom.md",
     "in-progress/get-off-phone.md",
+    "in-progress/chess.md",
+    "in-progress/pintrest-supremacy.md",
+    "published/lagom.md",
+    "published/2026-resolutions.md",
+    "jackie.md",
+    "divya.md",
+    "annabel bday.md",
     "in-progress/digitally-minimal.md",
     "in-progress/Normal Text Editor.md",
     "in-progress/Learning Chess - Part 1.md",
@@ -251,7 +242,6 @@
     "in-progress",
     "published",
     "pics/cats.jpeg",
-    "pics",
-    "read-time.md"
+    "pics"
   ]
 }
