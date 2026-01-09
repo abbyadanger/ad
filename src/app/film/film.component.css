@@ -1,0 +1,80 @@
+.content {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Quicksand", sans-serif;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background-color: #33658a;
+  color: #FFFFFF;
+  font-family: "Quicksand", sans-serif;
+  /* color: #eb5e3a; cool orange color */
+}
+
+.header {
+  display: flex;
+  font-size: xx-large;
+  padding-bottom: 10%;
+  color: #86bbd8;
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  line-height: 1.4;
+  font-size: small;
+}
+
+/* Hyperlink Styling */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: #86bbd8; /* light gray underline */
+  transition: text-decoration-color 0.2s;
+}
+
+a:hover, a:focus {
+  text-decoration-color: #FFFFFF; /* darker underline on hover */
+}
+
+.blinking-underscore {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Arrow Styling */
+.arrow {
+  font-size: medium;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow .material-icons {
+  font-size: 12px; /* Makes the keyboard_return icon smaller */
+}
+
+.footer-msg {
+  padding-top: 15%;
+  font-size: xx-small;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
