@@ -89,6 +89,16 @@
       "tags": [],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "09",
+      "filename": "on-film.md",
+      "title": "On Film Photography",
+      "dateFormatted": "1.9.2026",
+      "slug": "on-film",
+      "tags": [],
+      "published": true,
+      "readTime": null
     }
   ]
 }
