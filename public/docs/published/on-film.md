@@ -7,7 +7,7 @@ I decided on the [Nikon One Touch 35mm](https://imaging.nikon.com/imaging/inform
 
 Shooting on a point & shoot film camera makes you *reallllllly* think about the photo you are taking. It forces you to work with what you have - You can't be wasteful or make adjustments based the previous. It's a beautiful surprise getting your film back to see that the shot you weren't sure about is actually the best one in the entire roll. There is something really cool about that.
 
-This camera has gotten me excited about taking photos again. I made a dedicated place for them to live at [abbydanger.com/film](abbydanger.com/film) - I'll be posting more of my pictures there in the future.
+This camera has gotten me excited about taking photos again. I made a dedicated place for them to live at [abbydanger.com/film](https://abbydanger.com/film) - I'll be posting more of my pictures there in the future.
 
 Here are some favorites from my first few rolls :)
 
