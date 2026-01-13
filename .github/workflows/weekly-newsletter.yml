@@ -1,9 +1,9 @@
 name: Weekly Newsletter
 
-# Runs every Sunday at 8:00 PM CST (Monday 2:00 AM UTC)
+# Runs every Sunday at 7:00 AM CST (Sunday 1:00 PM UTC)
 on:
   schedule:
-    - cron: '0 2 * * 1'
+    - cron: '0 13 * * 0'
   # Also allow manual triggering
   workflow_dispatch:
 
