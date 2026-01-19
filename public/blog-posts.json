@@ -99,6 +99,16 @@
       "tags": [],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "10",
+      "filename": "chess.md",
+      "title": "Chess",
+      "dateFormatted": "1.19.2026",
+      "slug": "chess",
+      "tags": [],
+      "published": true,
+      "readTime": null
     }
   ]
 }

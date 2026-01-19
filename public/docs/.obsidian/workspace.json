@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "in-progress/chess.md",
+                "file": "published/chess.md",
                 "mode": "source",
                 "source": false
               },
@@ -183,13 +183,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "ba19586a9ca9dfe2",
+  "active": "a665e7fba0e28afe",
   "lastOpenFiles": [
-    "in-progress/get-off-phone.md",
-    "in-progress/rowing-machine.md",
     "in-progress/pintrest-supremacy.md",
     "in-progress/hobby-collector.md",
-    "in-progress/chess.md",
+    "in-progress/get-off-phone.md",
+    "published/chess.md",
+    "in-progress/rowing-machine.md",
     "published/on-film.md",
     "published/welcome.md",
     "abbydanger.com/film.md",
