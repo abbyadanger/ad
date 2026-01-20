@@ -21,12 +21,14 @@ export class FilmComponent implements OnInit {
 
   ngOnInit(): void {
     // Retrieve list of filenames for pictures
-    this.http.get<string[]>('/film-list.json').subscribe({
+    this.http.get<string[]>('./film-list.json').subscribe({
       next: (filenames) => {
         this.filenames = this.randomizeOrder(filenames);
+        console.log(`Loaded ${this.filenames.length} film images`);
       },
       error: (error) => {
         console.error('Error loading film list:', error);
+        console.error('Tried to load: ./film-list.json');
         this.filenames = [];
       }
     });
