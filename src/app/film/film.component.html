@@ -7,7 +7,23 @@
             </div>
         </a>
 
-        Coming Soon...
+        <div class="photo-grid" *ngIf="filenames.length > 0">
+            <div 
+                *ngFor="let filename of filenames" 
+                class="photo-item"
+                (click)="openImage(filename)"
+            >
+                <img 
+                    [src]="getImagePath(filename)" 
+                    [alt]="filename"
+                    class="thumbnail"
+                />
+            </div>
+        </div>
+
+        <div *ngIf="filenames.length === 0" class="loading">
+            Loading photos...
+        </div>
 
         <div class="arrow">
             <a routerLink="/">
@@ -17,6 +33,35 @@
             </a>
         </div>
 
+    </div>
+
+    <!-- Modal for viewing individual images -->
+    <div *ngIf="selectedImage" class="modal-overlay" (click)="closeImage()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            
+            <button class="close-btn" (click)="closeImage()">&times;</button>
+            
+            <!-- Previous arrow -->
+            <button class="nav-arrow nav-arrow-left" (click)="previousImage()">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            
+            <!-- Next arrow -->
+            <button class="nav-arrow nav-arrow-right" (click)="nextImage()">
+                <span class="material-icons">chevron_right</span>
+            </button>
+            
+            <img 
+                [src]="getImagePath(selectedImage)" 
+                [alt]="selectedImage"
+                class="modal-image"
+            />
+            
+            <!-- Image counter -->
+            <div class="image-counter">
+                {{ getCurrentImageNumber() }}
+            </div>
+        </div>
     </div>
 
     <div class="footer-msg">

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:abby-app": "node dist/abby-app/server/server.mjs",
-    "build:github-pages": "ng build --configuration production --base-href /"
+    "build:github-pages": "npm run generate:film-list && ng build --configuration production --base-href /",
+    "generate:film-list": "node scripts/generate-film-list.js"
   },
   "prettier": {
     "printWidth": 100,
