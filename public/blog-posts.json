@@ -109,6 +109,16 @@
       "tags": [],
       "published": true,
       "readTime": null
+    },
+    {
+      "id": "11",
+      "filename": "my-photos.md",
+      "title": "My Photos",
+      "dateFormatted": "1.20.2026",
+      "slug": "my-photos",
+      "tags": [],
+      "published": true,
+      "readTime": null
     }
   ]
 }
