@@ -12,6 +12,8 @@ main {
   background-color: #33658a;
   color: #FFFFFF;
   font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* AD Header Styling */
@@ -64,9 +66,14 @@ a:hover, a:focus {
 /* Footer Styling */
 .footer-msg {
   font-size: xx-small;
-  bottom: 0px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
   width: 100%;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* Blog Content */
