@@ -1,0 +1,36 @@
+name: Daily DB Ping
+
+# Runs every day at 8:00 PM CST (2:00 AM UTC, next day)
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  # Also allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  daily-db-ping:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        
+    - name: Daily DB Ping
+      env:
+        SUPABASE_URL: 'https://nofpllfekouldgxgyunu.supabase.co'
+        SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vZnBsbGZla291bGRneGd5dW51Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcwNDQsImV4cCI6MjA3ODQ1MzA0NH0.KfmYheXhjnG7Q9OWC6PiAr8IW38VlXRCXJnpQJIV1AM'
+        EMAILJS_SERVICE_ID: 'service_fgmh6c5'
+        EMAILJS_TEMPLATE_ID: 'template_zmw8pd9'
+        EMAILJS_PUBLIC_KEY: 'Aol5sZm8-YIcx43oi'
+        EMAILJS_PRIVATE_KEY: 'PFdL6M9xONS55-rIEl0eh'
+      run: |
+        node scripts/daily-db-ping.js

@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "3d2e960c24e4867f",
+        "id": "cbda0c488cb5d793",
         "type": "tabs",
         "children": [
           {
-            "id": "7f1a0c944da86ba9",
+            "id": "6b2cc0c41d122a8f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "in-progress/pintrest-supremacy.md",
+                "file": "note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pintrest-supremacy"
-            }
-          },
-          {
-            "id": "ecc7641cbf5afb1e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "published/my-photos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "my-photos"
+              "title": "note"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "3c33cb5c329fcc6a",
@@ -198,8 +183,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "ecc7641cbf5afb1e",
+  "active": "6b2cc0c41d122a8f",
   "lastOpenFiles": [
+    "note.md",
     "in-progress/pintrest-supremacy.md",
     "published/my-photos.md",
     "pics/film/000114560035.jpg",
@@ -239,7 +225,6 @@
     "published/some-protector.md",
     "published/writing-hard.md",
     "hi.txt.md",
-    "published/some-protector.txt.md",
     "pics/Unconfirmed 543366.crdownload",
     "pics/Unconfirmed 452567.crdownload",
     "pics/~ats-coffee.tmp",
