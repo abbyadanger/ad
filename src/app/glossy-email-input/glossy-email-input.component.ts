@@ -1,3 +1,6 @@
+/* 
+  This file contains the HTML & Typescript for the GlossyEmailInputComponent
+*/
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -57,9 +60,9 @@ export class GlossyEmailInputComponent {
 
   constructor(private supabaseService: SupabaseService) {}
 
+  /* Displays the email input field & hides the Subscribe button */
   showInput() {
     this.showInputField = true;
-    // Focus the input field after it appears
     setTimeout(() => {
       const input = document.querySelector('.glossy-email-input') as HTMLInputElement;
       if (input) {
@@ -68,19 +71,22 @@ export class GlossyEmailInputComponent {
     }, 100);
   }
 
+  /* Adds email to the DB */
   async onSubmit(event: Event) {
+    /* Prevents page from refreshing on submit */
     event.preventDefault();
     
-    // Don't submit if email is empty
+    /* Don't submit if email is empty */
     if (!this.email.trim()) {
       return;
     }
-    // Show success message immediately
+    /* Show success message immediately - Do NOT check for errors */
     this.showSuccessMessage = true;
-    // Save email to database in background (don't wait)
+    /* Save email to DB - Do NOT check for errors */
     this.supabaseService.addEmailToDatabase(this.email);
   }
 
+  /* Resets the form to initial state */
   resetForm() {
     this.showSuccessMessage = false;
     this.showInputField = false;

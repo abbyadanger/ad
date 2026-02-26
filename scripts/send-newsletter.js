@@ -1,9 +1,14 @@
+/* 
+  This script sends a newsletter email to all subscribers in the Supabase DB.
+*/
+
 const { createClient } = require('@supabase/supabase-js');
 const emailjs = require('@emailjs/nodejs');
-const fs = require('fs');
+const fs = require('fs'); 
 
 async function sendWeeklyNewsletter() {
   try {
+    /* Check if environment is set up correctly */
     console.log('🚀 Starting newsletter process...');
     console.log('Environment check:');
     console.log('SUPABASE_URL:', process.env.SUPABASE_URL ? 'Set' : 'Missing');
@@ -13,28 +18,29 @@ async function sendWeeklyNewsletter() {
     console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing');
     console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Set' : 'Missing');
     
-    // Load and filter blog posts from the past week
+    /* Load and filter blog posts from the past week */
     console.log('📚 Loading blog posts...');
     const blogPostsData = JSON.parse(fs.readFileSync('public/blog-posts.json', 'utf8'));
     
-    // Get current date and one week ago
+    /* Get current date and one week ago */
     const now = new Date();
     const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
     
-    // Filter published posts from the past week
+    /* Filter published posts from the past week */
     const recentPosts = blogPostsData.posts.filter(post => {
       if (!post.published || !post.dateFormatted) return false;
       
-      // Parse the date format (MM.DD.YYYY)
+      /* Parse the date format (MM.DD.YYYY) to year, month, day variables */
       const [month, day, year] = post.dateFormatted.split('.');
       const postDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
       
+      /* Returns true when the post date is within the past week */
       return postDate >= oneWeekAgo && postDate <= now;
     });
     
     console.log(`Found ${recentPosts.length} posts from the past week`);
     
-    // Generate message with blog post links
+    /* HTML for email content */
     let message = '';
     if (recentPosts.length > 0) {
       const postLinks = recentPosts.map(post => 
@@ -67,41 +73,33 @@ async function sendWeeklyNewsletter() {
       `;
     }
     
-    // Initialize Supabase
+    /* Configure Supabase client */    
     const supabase = createClient(
       process.env.SUPABASE_URL, 
       process.env.SUPABASE_KEY
     );
-    
-    // Get all subscribers
-    const { data: subscribers, error } = await supabase
-      .from('emails')
-      .select('email');
-    
+
+    /* Get all subscribers from DB */
+    const { data: subscribers, error } = await supabase.from('emails').select('email');
     if (error) {
-      console.error('Supabase error:', error);
+      console.error('❌ Supabase Error:', error);
       throw error;
     }
-    
     console.log(`📧 Found ${subscribers?.length || 0} subscribers`);
-    if (subscribers && subscribers.length > 0) {
-      console.log('Subscriber emails:', subscribers.map(s => s.email));
-    }
     
+    /* Send emails to 5 subscribers at a time */
     let sent = 0;
     let failed = 0;
-    
-    // Send emails in batches
     const batchSize = 5;
     for (let i = 0; i < subscribers.length; i += batchSize) {
       const batch = subscribers.slice(i, i + batchSize);
-      
       const batchPromises = batch.map(async (subscriber) => {
         try {
           console.log(`Sending to: ${subscriber.email}`);
           console.log(`Using Service ID: ${process.env.EMAILJS_SERVICE_ID}`);
           console.log(`Using Template ID: ${process.env.EMAILJS_TEMPLATE_ID}`);
           
+          /* Call EmailJS API to send email */
           const result = await emailjs.send(
             process.env.EMAILJS_SERVICE_ID,
             process.env.EMAILJS_TEMPLATE_ID,
@@ -117,10 +115,10 @@ async function sendWeeklyNewsletter() {
             }
           );
           
-          console.log(`  ✓ ${subscriber.email} - Result:`, result);
+          console.log(`✅ ${subscriber.email} - Result:`, result);
           sent++;
         } catch (emailError) {
-          console.error(`  ✗ ${subscriber.email}: ${emailError.message || 'Unknown error'}`);
+          console.error(`❌ ${subscriber.email}: ${emailError.message || '❌ Unknown error'}`);
           console.error('Full error object:', JSON.stringify(emailError, null, 2));
           console.error('Error name:', emailError.name);
           console.error('Error status:', emailError.status);
@@ -129,9 +127,10 @@ async function sendWeeklyNewsletter() {
         }
       });
       
+      /* Wait for all emails in current batch to finish sending */
       await Promise.all(batchPromises);
       
-      // Add delay between batches
+      /* Add delay between batches */
       if (i + batchSize < subscribers.length) {
         await new Promise(resolve => setTimeout(resolve, 2000));
       }
@@ -145,4 +144,5 @@ async function sendWeeklyNewsletter() {
   }
 }
 
+/* Runs the script */
 sendWeeklyNewsletter();

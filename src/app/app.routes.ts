@@ -1,3 +1,7 @@
+/* 
+  This files defines the routes and their corresponding components
+*/
+
 import { Routes } from '@angular/router';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { MarkdownViewerComponent } from './markdown-viewer/markdown-viewer.component';

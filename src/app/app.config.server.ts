@@ -1,3 +1,10 @@
+/*
+  This file defines the server-side configuration for the Angular app.
+
+  Notes:
+  - It merges the base appConfig with server-specific providers like provideServerRendering
+*/
+
 import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
 import { provideServerRendering, withRoutes } from '@angular/ssr';
 import { appConfig } from './app.config';

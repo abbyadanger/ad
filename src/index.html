@@ -1,17 +1,22 @@
+<!-- This is the main HTML template for the Angular application -->
+
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Browser Header -->
   <meta charset="utf-8">
   <title>Abby Danger</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="ad.png">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Workaround for GitHub Pages since it doesn't support Angular's client-side routing --> 
   <script>
-    // GitHub Pages SPA redirect handler
     (function(l) {
       if (l.search[1] === '/' ) {
         var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -24,6 +29,8 @@
     }(window.location))
   </script>
 </head>
+
+<!-- Displays the Angular application -->
 <body>
   <app-root></app-root>
 </body>

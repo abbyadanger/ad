@@ -7,6 +7,7 @@
             </div>
         </a>
 
+        <!-- Photo Grid -->
         <div class="photo-grid" *ngIf="filenames.length > 0">
             <div 
                 *ngFor="let filename of filenames" 
@@ -21,6 +22,7 @@
             </div>
         </div>
 
+        <!-- Loading State -->
         <div *ngIf="filenames.length === 0" class="loading">
             Loading photos... {{ filenames.length }}
         </div>
@@ -51,6 +53,7 @@
                 <span class="material-icons">chevron_right</span>
             </button>
             
+            <!-- Selected Image -->
             <img 
                 [src]="getImagePath(selectedImage)" 
                 [alt]="selectedImage"

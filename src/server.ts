@@ -1,3 +1,11 @@
+/* 
+  This file handles Angular Server-Side Rendering (SSR) using Express.js
+
+  Notes:
+  - It serves static files from the /browser directory & renders the Angular application for all other routes
+  - It also includes an API endpoint to list markdown files in the public/docs/published directory
+*/
+
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -15,7 +23,7 @@ const angularApp = new AngularNodeAppEngine();
 import fs from 'fs';
 import path from 'path';
 
-// API endpoint to list markdown files in public/docs/published
+/* API endpoint to get list of markdown files in public/docs/published */
 app.get('/api/docs-list', (req, res) => {
   const docsDir = path.join(import.meta.dirname, '../public/docs/published');
   fs.readdir(docsDir, (err, files) => {
@@ -25,9 +33,7 @@ app.get('/api/docs-list', (req, res) => {
   });
 });
 
-/**
- * Serve static files from /browser
- */
+/* Serve static files from /browser */
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -36,9 +42,7 @@ app.use(
   }),
 );
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
+/* Handle all other routes by rendering the Angular application */
 app.use((req, res, next) => {
   angularApp
     .handle(req)
@@ -48,22 +52,18 @@ app.use((req, res, next) => {
     .catch(next);
 });
 
-/**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
- */
+/* Starts the Express server ONLY when this file is run directly (not when imported) */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
   app.listen(port, (error) => {
     if (error) {
       throw error;
     }
-
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`✅ Node Express server listening on http://localhost:${port}`);
   });
 }
 
-/**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+/* Export the request handler so it can be used by the Angular CLI (for dev-server and during build)
+  or for Firebase Cloud Functions.
  */
 export const reqHandler = createNodeRequestHandler(app);

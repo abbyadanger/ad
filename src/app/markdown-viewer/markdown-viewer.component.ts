@@ -1,3 +1,6 @@
+/* 
+  This component is responsible for displaying markdown content as HTML.
+*/
 import { Component, Input, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -32,13 +35,8 @@ export class MarkdownViewerComponent implements OnInit {
   html = signal('');
   loading = signal(true);
   error = signal<string | null>(null);
-  readTime = signal('');
-  
-  // Metadata from JSON
   postMetadata = signal<BlogPost | null>(null);
   title = signal('');
-  date = signal('');
-  tags = signal<string[]>([]);
 
   constructor(private route: ActivatedRoute) {}
 
@@ -53,70 +51,32 @@ export class MarkdownViewerComponent implements OnInit {
     this.loading.set(true);
     this.error.set(null);
     try {
-      // First load metadata to find the filename from the slug
+      /* Retrieves blog post metadata from the blog-posts.json file */
       const metadataResponse = await fetch('blog-posts.json', { cache: 'no-cache' });
-      if (!metadataResponse.ok) throw new Error(`Failed to load metadata: HTTP ${metadataResponse.status}`);
-
+      if (!metadataResponse.ok) throw new Error(`❌ Failed to load metadata: HTTP ${metadataResponse.status}`);
+      
+      /* Ensures each post has a slug */
       const blogData: BlogData = await metadataResponse.json();
-
-      // Find the post metadata by slug (the filename() is actually the slug now)
       const postMeta = blogData.posts.find(post => post.slug === this.filename());
-      if (!postMeta) throw new Error(`Post not found: ${this.filename()}`);
+      if (!postMeta) throw new Error(`❌ Post not found: ${this.filename()}`);
 
-      // Set metadata
+      /* Sets variables */
       this.postMetadata.set(postMeta);
       this.title.set(postMeta.title);
-      this.date.set(postMeta.dateFormatted);
-      this.tags.set(postMeta.tags);
 
-      // Now load the markdown file using the actual filename
+      /* Retrieves content from the markdown file */
       const mdResponse = await fetch(`docs/published/${postMeta.filename}`, { cache: 'no-cache' });
-      if (!mdResponse.ok) throw new Error(`HTTP ${mdResponse.status}`);
-
+      if (!mdResponse.ok) throw new Error(`❌ Failed to load markdown: HTTP ${mdResponse.status}`);
+      
+      /* Parses content from markdown to a string, then displays as HTML */
       const md = await mdResponse.text();
-
-      // Process markdown
       const rawHtml = marked.parse(md) as string;
       this.html.set(DOMPurify.sanitize(rawHtml));
       
-      // Calculate read time
-      this.calculateReadTime(md);
     } catch (e: any) {
-      this.error.set(e.message || 'Failed to load markdown');
+      this.error.set(e.message || '❌ Failed to load markdown');
     } finally {
       this.loading.set(false);
-    }
-  }
-
-  private calculateReadTime(markdownText: string) {
-    // Remove markdown syntax for more accurate word count
-    const cleanText = markdownText
-      .replace(/```[\s\S]*?```/g, ' ') // Remove code blocks
-      .replace(/`[^`]*`/g, ' ') // Remove inline code
-      .replace(/!\[.*?\]\(.*?\)/g, ' ') // Remove images
-      .replace(/\[.*?\]\(.*?\)/g, ' ') // Remove links
-      .replace(/#{1,6}\s*/g, ' ') // Remove headers
-      .replace(/[*_~`]/g, ' ') // Remove formatting characters
-      .replace(/\s+/g, ' ') // Normalize whitespace
-      .trim();
-    
-    // Count words
-    const words = cleanText.split(' ').filter(word => word.length > 0);
-    const wordCount = words.length;
-    
-    // Calculate read time (average 200 words per minute)
-    const wordsPerMinute = 200;
-    const minutes = Math.ceil(wordCount / wordsPerMinute);
-    
-    // Format read time
-    if (minutes === 1) {
-      this.readTime.set('1 min read');
-    } else if (minutes < 60) {
-      this.readTime.set(`${minutes} min read`);
-    } else {
-      const hours = Math.floor(minutes / 60);
-      const remainingMinutes = minutes % 60;
-      this.readTime.set(`${hours}h ${remainingMinutes}m read`);
     }
   }
 }
