@@ -1,6 +1,6 @@
 # Abby Danger Blog
 
-My personal blog & photography portfolio, featuring automated newsletter functionality and dynamic content management.
+My personal blog & photography portfolio.
 
 ## 🌟 Features
 
