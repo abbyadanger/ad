@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "cbda0c488cb5d793",
+        "id": "2b7693afbfc37529",
         "type": "tabs",
         "children": [
           {
-            "id": "6b2cc0c41d122a8f",
+            "id": "d4206fcd81af845b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "note.md",
+                "file": "in-progress/vision.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "note"
+              "title": "vision"
+            }
+          },
+          {
+            "id": "9fa794d949a2f23b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "in-progress/monthly-newsletter.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "monthly-newsletter"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,8 +198,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "6b2cc0c41d122a8f",
+  "active": "9fa794d949a2f23b",
   "lastOpenFiles": [
+    "in-progress/vision.md",
+    "in-progress/monthly-newsletter.md",
+    "in-progress/get-off-phone.md",
     "note.md",
     "in-progress/pintrest-supremacy.md",
     "published/my-photos.md",
@@ -198,7 +216,6 @@
     "pics/film/000114560003.jpg",
     "pics/film/000114570034.jpg",
     "pics/film/000114570031.jpg",
-    "in-progress/get-off-phone.md",
     "in-progress/hobby-collector.md",
     "published/blog-updates.md",
     "published/2026-resolutions.md",
@@ -223,8 +240,6 @@
     "published/moment-1.md",
     "published/writing-flow.md",
     "published/some-protector.md",
-    "published/writing-hard.md",
-    "hi.txt.md",
     "pics/Unconfirmed 543366.crdownload",
     "pics/Unconfirmed 452567.crdownload",
     "pics/~ats-coffee.tmp",
