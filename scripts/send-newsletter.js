@@ -6,10 +6,17 @@ const { createClient } = require('@supabase/supabase-js');
 const emailjs = require('@emailjs/nodejs');
 const fs = require('fs'); 
 
-async function sendWeeklyNewsletter() {
+async function sendMonthlyNewsletter() {
   try {
+    /* Check if today is the first day of the month */
+    const today = new Date();
+    if (today.getDate() !== 1) {
+      console.log('📅 Not the first day of the month. Newsletter will only send on the 1st.');
+      process.exit(0);
+    }
+    
     /* Check if environment is set up correctly */
-    console.log('🚀 Starting newsletter process...');
+    console.log('🚀 Starting monthly newsletter process...');
     console.log('Environment check:');
     console.log('SUPABASE_URL:', process.env.SUPABASE_URL ? 'Set' : 'Missing');
     console.log('SUPABASE_KEY:', process.env.SUPABASE_KEY ? 'Set' : 'Missing');
@@ -18,15 +25,15 @@ async function sendWeeklyNewsletter() {
     console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing');
     console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Set' : 'Missing');
     
-    /* Load and filter blog posts from the past week */
+    /* Load and filter blog posts from the past month */
     console.log('📚 Loading blog posts...');
     const blogPostsData = JSON.parse(fs.readFileSync('public/blog-posts.json', 'utf8'));
     
-    /* Get current date and one week ago */
+    /* Get current date and one month ago */
     const now = new Date();
-    const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
     
-    /* Filter published posts from the past week */
+    /* Filter published posts from the past month */
     const recentPosts = blogPostsData.posts.filter(post => {
       if (!post.published || !post.dateFormatted) return false;
       
@@ -34,11 +41,11 @@ async function sendWeeklyNewsletter() {
       const [month, day, year] = post.dateFormatted.split('.');
       const postDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
       
-      /* Returns true when the post date is within the past week */
-      return postDate >= oneWeekAgo && postDate <= now;
+      /* Returns true when the post date is within the past month */
+      return postDate >= oneMonthAgo && postDate <= now;
     });
     
-    console.log(`Found ${recentPosts.length} posts from the past week`);
+    console.log(`Found ${recentPosts.length} posts from the past month`);
     
     /* HTML for email content */
     let message = '';
@@ -53,7 +60,7 @@ async function sendWeeklyNewsletter() {
             <img src="https://abbydanger.com/ad.png" alt="Abby Danger Logo" style="width: 60px; height: 60px;">
           </div>
           <p>Hi there 👋</p>
-          <p>Here's what I wrote about on the blog this week:</p>
+          <p>Here's what I wrote about on the blog this month:</p>
           <p>${postLinks}</p>
           <p>Read more at <a href="https://abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>
           <p>Talk Soon,<br>A</p>
@@ -66,7 +73,7 @@ async function sendWeeklyNewsletter() {
             <img src="https://abbydanger.com/ad.png" alt="Abby Danger Logo" style="width: 60px; height: 60px;">
           </div>
           <p>Hi there 👋</p>
-          <p>No new posts this week - Maybe next week 😉</p>
+          <p>No new posts this month - Maybe next month 😉</p>
           <p>Read more at <a href="https://abbydanger.com/blog" target="_blank" rel="noopener" style="color: #2c5f73; text-decoration: underline;">abbydanger.com/blog</a></p>
           <p>Talk Soon,<br>A</p>
         </div>
@@ -105,7 +112,7 @@ async function sendWeeklyNewsletter() {
             process.env.EMAILJS_TEMPLATE_ID,
             {
               to_email: subscriber.email,
-              subject: 'Weekly Blog Update from Abby Danger',
+              subject: 'Monthly Blog Update from Abby Danger',
               message: message,
               from_name: 'Abby Danger'
             },
@@ -136,13 +143,13 @@ async function sendWeeklyNewsletter() {
       }
     }
     
-    console.log(`📊 Newsletter complete! Sent: ${sent}, Failed: ${failed}`);
+    console.log(`📊 Monthly newsletter complete! Sent: ${sent}, Failed: ${failed}`);
     
   } catch (error) {
-    console.error('❌ Error sending weekly newsletter:', error);
+    console.error('❌ Error sending monthly newsletter:', error);
     process.exit(1);
   }
 }
 
 /* Runs the script */
-sendWeeklyNewsletter();
+sendMonthlyNewsletter();
