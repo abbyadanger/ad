@@ -9,6 +9,6 @@ Stuff That's Changing:
 - I want to start building/designing/creating more stuff, with code - So the addition of [abbydanger.com/lab](https://abbydanger.com/lab) only seemed fitting for the website!
 - In hopes to become more comfortable with my writing, I'm challenging myself to write everyday for 30 days (inspired by lots of people I follow on [Medium](https://medium.com/)) - I'll include *some* of those posts on the blog.
 
-Well, that's all I have to say - Here's to a new ~version~ of the website !
+Well, that's all I have to say - Here's to a new ~ version ~ of the website !
 
 

@@ -37,6 +37,7 @@ export class MarkdownViewerComponent implements OnInit {
   error = signal<string | null>(null);
   postMetadata = signal<BlogPost | null>(null);
   title = signal('');
+  date = signal('');
 
   constructor(private route: ActivatedRoute) {}
 
@@ -63,6 +64,7 @@ export class MarkdownViewerComponent implements OnInit {
       /* Sets variables */
       this.postMetadata.set(postMeta);
       this.title.set(postMeta.title);
+      this.date.set(postMeta.dateFormatted);
 
       /* Retrieves content from the markdown file */
       const mdResponse = await fetch(`docs/published/${postMeta.filename}`, { cache: 'no-cache' });
