@@ -1,14 +1,15 @@
-name: Weekly Newsletter
+name: Monthly Newsletter
 
-# Runs every Sunday at 7:00 AM CST (Sunday 1:00 PM UTC)
+# Runs on the last day of each month at 7:00 AM CST (1:00 PM UTC)
+# Scheduled for days 28-31, script logic determines if it's actually the last day
 on:
   schedule:
-    - cron: '0 13 * * 0'
+    - cron: '0 13 28-31 * *'
   # Also allow manual triggering
   workflow_dispatch:
 
 jobs:
-  send-weekly-newsletter:
+  send-monthly-newsletter:
     runs-on: ubuntu-latest
     
     steps:
@@ -24,7 +25,7 @@ jobs:
       run: |
         npm install @supabase/supabase-js @emailjs/nodejs
         
-    - name: Send weekly newsletter
+    - name: Send monthly newsletter
       env:
         SUPABASE_URL: 'https://nofpllfekouldgxgyunu.supabase.co'
         SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vZnBsbGZla291bGRneGd5dW51Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcwNDQsImV4cCI6MjA3ODQ1MzA0NH0.KfmYheXhjnG7Q9OWC6PiAr8IW38VlXRCXJnpQJIV1AM'

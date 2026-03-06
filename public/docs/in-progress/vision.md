@@ -7,6 +7,10 @@ I don't want to think "What should I write about?" but instead I want to think "
 Strava Chart - For when I start running/biking again?
 Qobuz to Spotify - Sync playlists for Annabel
 Blog Prompt Generator
+mood tracker
+create a better mock up for pre-existing service
+vocabulary sharpener
+build a game similar to worlde?
 
 *AD LAB*
 

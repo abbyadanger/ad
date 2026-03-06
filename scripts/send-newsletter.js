@@ -8,10 +8,13 @@ const fs = require('fs');
 
 async function sendMonthlyNewsletter() {
   try {
-    /* Check if today is the first day of the month */
+    /* Check if today is the last day of the month */
     const today = new Date();
-    if (today.getDate() !== 1) {
-      console.log('📅 Not the first day of the month. Newsletter will only send on the 1st.');
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    
+    if (today.getMonth() === tomorrow.getMonth()) {
+      console.log('📅 Not the last day of the month. Newsletter will only send on the last day.');
       process.exit(0);
     }
     
