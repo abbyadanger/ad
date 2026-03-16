@@ -18,9 +18,17 @@ async function dailyDbPing() {
     /* Connect to Supabase */
     const supabase = createClient(supabaseUrl, supabaseKey);
     
-    /* Simple query that gets email count and keeps connection alive */
-    const { data } = await supabase.from('emails').select('id');
-    console.log(`✅ Daily DB Ping successful! Email count: ${data.length}`);
+    /* Simple query that gets email count and keeps connection alive.
+        - count: 'exact' runs COUNT(*) internally
+        - head: true only tells the DB to make an HTTP HEAD request instead of GET which
+          prevents fetching all rows, only returns the count
+    */
+    const { count, error } = await supabase
+      .from('emails')
+      .select('*', { count: 'exact', head: true });
+
+    if (error) throw error;
+    console.log(`✅ Daily DB Ping successful! Email count: ${count}`);
     
   } catch (error) {
     console.error('❌ Error Trying to Ping the DB', error);

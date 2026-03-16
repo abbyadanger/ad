@@ -1,9 +1,10 @@
 name: Daily DB Ping
 
-# Runs every day at 8:00 PM CST (2:00 AM UTC, next day)
+# Runs twice a day at 8:00 AM CST (2:00 PM UTC) and 8:00 PM CST (2:00 AM UTC, next day)
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * *'   # 2:00 AM UTC (8:00 PM CST)
+    - cron: '0 14 * * *'  # 2:00 PM UTC (8:00 AM CST)
   # Also allow manual triggering
   workflow_dispatch:
 
