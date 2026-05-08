@@ -22,7 +22,7 @@ async function sendMonthlyNewsletter() {
     console.log('🚀 Starting monthly newsletter process...');
     console.log('Environment check:');
     console.log('SUPABASE_URL:', process.env.SUPABASE_URL ? 'Set' : 'Missing');
-    console.log('SUPABASE_KEY:', process.env.SUPABASE_KEY ? 'Set' : 'Missing');
+    console.log('SUPABASE_SERVICE_ROLE_KEY:', (process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_KEY) ? 'Set' : 'Missing');
     console.log('EMAILJS_SERVICE_ID:', process.env.EMAILJS_SERVICE_ID ? 'Set' : 'Missing');
     console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID ? 'Set' : 'Missing');
     console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing');
@@ -86,7 +86,7 @@ async function sendMonthlyNewsletter() {
     /* Configure Supabase client */    
     const supabase = createClient(
       process.env.SUPABASE_URL, 
-      process.env.SUPABASE_KEY
+      process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_KEY
     );
 
     /* Get all subscribers from DB */

@@ -27,11 +27,7 @@ jobs:
         
     - name: Daily DB Ping
       env:
-        SUPABASE_URL: 'https://nofpllfekouldgxgyunu.supabase.co'
-        SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vZnBsbGZla291bGRneGd5dW51Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcwNDQsImV4cCI6MjA3ODQ1MzA0NH0.KfmYheXhjnG7Q9OWC6PiAr8IW38VlXRCXJnpQJIV1AM'
-        EMAILJS_SERVICE_ID: 'service_fgmh6c5'
-        EMAILJS_TEMPLATE_ID: 'template_zmw8pd9'
-        EMAILJS_PUBLIC_KEY: 'Aol5sZm8-YIcx43oi'
-        EMAILJS_PRIVATE_KEY: 'PFdL6M9xONS55-rIEl0eh'
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       run: |
         node scripts/daily-db-ping.js

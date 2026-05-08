@@ -5,31 +5,51 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
+interface PublicAppConfig {
+  supabaseUrl: string;
+  supabaseAnonKey: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class SupabaseService {
-  private supabase: SupabaseClient;
+  private supabaseClientPromise: Promise<SupabaseClient>;
 
   constructor() {
+    this.supabaseClientPromise = this.createSupabaseClient();
+  }
 
-    /* Configure Supabase client */
-    const supabaseUrl = 'https://nofpllfekouldgxgyunu.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vZnBsbGZla291bGRneGd5dW51Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcwNDQsImV4cCI6MjA3ODQ1MzA0NH0.KfmYheXhjnG7Q9OWC6PiAr8IW38VlXRCXJnpQJIV1AM';
-    this.supabase = createClient(supabaseUrl, supabaseKey);
+  private async createSupabaseClient(): Promise<SupabaseClient> {
+    const response = await fetch('/app-config.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Unable to load app config.');
+    }
 
+    const config = (await response.json()) as PublicAppConfig;
+    if (!config.supabaseUrl || !config.supabaseAnonKey) {
+      throw new Error('Supabase config is missing.');
+    }
+
+    return createClient(config.supabaseUrl, config.supabaseAnonKey);
+  }
+
+  private async getSupabaseClient(): Promise<SupabaseClient> {
+    return this.supabaseClientPromise;
   }
 
   /* Method to add an email to the database */
   async addEmailToDatabase(email: string): Promise<void> {
-    await this.supabase
+    const supabase = await this.getSupabaseClient();
+    await supabase
       .from('emails')
       .insert([{ email: email.toLowerCase().trim() }]);
   }
 
   /* Method to retrieve all emails from the database */
   async getAllEmails(): Promise<string[]> {
-    const { data } = await this.supabase
+    const supabase = await this.getSupabaseClient();
+    const { data } = await supabase
       .from('emails')
       .select('email');
     return data?.map(row => row.email) || [];

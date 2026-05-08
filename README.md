@@ -63,3 +63,21 @@ My personal blog & photography portfolio.
 ## 🌐 Live Site
 
 Visit the blog at [abbydanger.com](https://abbydanger.com) to see the live version.
+
+## 🔐 Secrets and Public Config
+
+This repository is safe to keep public only if sensitive keys are stored in GitHub Secrets.
+
+Required repository secrets:
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY` (public client key used by browser app)
+- `SUPABASE_SERVICE_ROLE_KEY` (server-only key used by scheduled scripts)
+- `EMAILJS_SERVICE_ID`
+- `EMAILJS_TEMPLATE_ID`
+- `EMAILJS_PUBLIC_KEY`
+- `EMAILJS_PRIVATE_KEY`
+
+Notes:
+- `SUPABASE_SERVICE_ROLE_KEY` must never be committed to source code.
+- `SUPABASE_ANON_KEY` is not a secret in a browser app; users can see it in network/dev tools.
+- Rotate any keys that were previously committed.
