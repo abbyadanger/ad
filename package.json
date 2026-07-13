@@ -8,9 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:abby-app": "node dist/abby-app/server/server.mjs",
-    "build:github-pages": "node scripts/generate-public-config.js && ng build --configuration production --base-href / && npm run generate:film-list:dist",
-    "generate:film-list": "node scripts/generate-film-list.js",
-    "generate:film-list:dist": "node scripts/generate-film-list-dist.js",
+    "build:github-pages": "node scripts/generate-public-config.js && ng build --configuration production --base-href",
     "generate:public-config": "node scripts/generate-public-config.js"
   },
   "prettier": {
