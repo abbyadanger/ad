@@ -32,9 +32,6 @@ jobs:
       run: npm ci
       
     - name: Build for GitHub Pages
-      env:
-        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: npm run build:github-pages
       
     - name: Setup Pages

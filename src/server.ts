@@ -3,7 +3,6 @@
 
   Notes:
   - It serves static files from the /browser directory & renders the Angular application for all other routes
-  - It also includes an API endpoint to list markdown files in the public/docs/published directory
 */
 
 import {
@@ -19,19 +18,6 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
-
-import fs from 'fs';
-import path from 'path';
-
-/* API endpoint to get list of markdown files in public/docs/published */
-app.get('/api/docs-list', (req, res) => {
-  const docsDir = path.join(import.meta.dirname, '../public/docs/published');
-  fs.readdir(docsDir, (err, files) => {
-    if (err) return res.status(500).json({ error: 'Failed to read docs directory' });
-    const mdFiles = files.filter(f => f.endsWith('.md')).map(f => `docs/published/${f}`);
-    res.json(mdFiles);
-  });
-});
 
 /* Serve static files from /browser */
 app.use(
