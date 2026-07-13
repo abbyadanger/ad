@@ -10,23 +10,23 @@
 
 main {
   background-color: #33658a;
-  /* background-color: #eb5e3a; */ /* cool orange color */
   color: #FFFFFF;
   font-family: "Quicksand", sans-serif;
 }
 
 /* AD Header Styling */
-
 .header {
   display: flex;
   font-size: xx-large;
   color: #86bbd8;
   font-family: "Quicksand", sans-serif;
-  /* color: #CBD183; */ /* lime green color */
 }
 .header-link {
   text-decoration: none;
   color: inherit;
+}
+.blinking-underscore {
+  animation: blink 1s steps(1) infinite;
 }
 
 /* General Paragraph Styling */
@@ -35,22 +35,14 @@ p {
   font-size: small;
 }
 
-/* Stuff Styling */
-.stuff {
-  margin-left: 20px;
-  padding-bottom: -10px;
-}
-
-/* Arrow Styling */
-.material-icons {
-  font-size: 12px; /* Makes the icon smaller */
-  padding-right: 5px;
-}
-
 /* Links Styling */
 .links {
   display: flex;
   gap: 8px;
+}
+
+img {
+  max-width: 260px;
 }
 
 /* Footer Styling */
@@ -72,15 +64,9 @@ a {
   text-decoration-color: #86bbd8;
   transition: text-decoration-color 0.2s;
 }
-
 a:hover, a:focus {
   text-decoration-color: #FFFFFF;
 }
-
-.blinking-underscore {
-  animation: blink 1s steps(1) infinite;
-}
-
 @keyframes blink {
   0%, 50% {
     opacity: 1;
