@@ -43,7 +43,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
-  font-size: medium;
+  font-size: small;
   margin-left: auto;
 }
 .menu a {
