@@ -1,0 +1,61 @@
+/* Header */
+.header-wrap {
+  padding: 40px 20px 0;
+}
+.header {
+  max-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  align-self: center;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+/* AD Logo */
+.logo {
+  display: flex;
+  font-size: x-large;
+  color: #33658a;
+  font-family: "Quicksand", sans-serif;
+}
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+.blinking-underscore {
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: medium;
+  margin-left: auto;
+}
+.menu a {
+  color: gray;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #33658a;
+}
+.menu a.active-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  color: #33658a;
+}

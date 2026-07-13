@@ -1,0 +1,48 @@
+/* Global */
+.container {
+  padding: 40px 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+    /* Standard Link Styling */
+    a {
+    color: gray;
+    text-decoration: none;
+    }
+    a:hover {
+    color: #33658a;
+    }
+
+/* Main Content */
+.content {
+    max-width: 300px;
+    align-self: center;
+}
+
+    /* Photo */
+    .me {
+        max-width: 300px;
+        border-radius: 8px;
+    }
+    /* Paragraph */
+    p {
+        line-height: 1.4;
+        font-size: medium;
+        padding-bottom: 70px;
+    }
+    /* Socials */
+    .socials {
+        display: flex;
+        gap: 15px;
+    }
+
+/* Footer */
+.footer-msg {
+  padding-top: 15%;
+  font-size: xx-small;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}

@@ -3,9 +3,13 @@
 */
 
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { WorkComponent } from './work/work.component';
+import { FilmComponent } from './film/film.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AboutComponent },
+  { path: 'work', component: WorkComponent },
+  { path: 'film', component: FilmComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
