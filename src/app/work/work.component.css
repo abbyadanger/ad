@@ -9,7 +9,9 @@
 
 /* Main Content */
 .content {
-    max-width: 35%;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     align-self: center;
 }
     .title {
