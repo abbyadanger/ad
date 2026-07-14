@@ -9,7 +9,7 @@
 
 /* Main Content */
 .content {
-    max-width: 500px;
+    max-width: 35%;
     align-self: center;
 }
     .title {
@@ -23,5 +23,8 @@
         font-size: small;
     }
     .progressive {
+        width: 100%;
         max-width: 500px;
+        height: auto;
+        display: block;
     }
