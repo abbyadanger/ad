@@ -1,0 +1,30 @@
+/* Global */
+.container {
+  padding: 40px 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+/* Main Content */
+.content {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    align-self: center;
+    text-align: center;
+}
+    .title {
+
+    }
+    .film-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+    }
+    .description {
+        font-style: italic;
+    }
