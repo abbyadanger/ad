@@ -41,12 +41,3 @@
         display: flex;
         gap: 25px;
     }
-
-/* Footer */
-.footer-msg {
-  padding-top: 15%;
-  font-size: xx-small;
-  bottom: 0px;
-  width: 100%;
-  text-align: center;
-}
