@@ -1,0 +1,27 @@
+/* Global */
+.container {
+  padding: 40px 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+/* Main Content */
+.content {
+    max-width: 500px;
+    align-self: center;
+}
+    .title {
+        font-size: x-large;
+    }
+    .year {
+        font-size: small;
+        color: gray;
+    }
+    .description {
+        font-size: small;
+    }
+    .progressive {
+        max-width: 500px;
+    }
