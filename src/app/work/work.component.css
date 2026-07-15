@@ -10,7 +10,7 @@
 /* Main Content */
 .content {
     width: 100%;
-    max-width: 500px;
+    max-width: 350px;
     height: auto;
     align-self: center;
 }
@@ -26,7 +26,7 @@
     }
     .progressive {
         width: 100%;
-        max-width: 500px;
+        max-width: 350px;
         height: auto;
         display: block;
     }

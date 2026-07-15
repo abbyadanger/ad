@@ -1,9 +1,10 @@
 /* Global */
 .container {
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
+    padding: 40px 20px;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
     /* Standard Link Styling */
     a {
@@ -16,14 +17,15 @@
 
 /* Main Content */
 .content {
-    max-width: 300px;
+    width: 100%;
+    max-width: 350px;
     align-self: center;
 }
 
     /* Photo */
     .me {
         display: block;
-        max-width: 200px;
+        max-width: 150px;
         width: 100%;
         border-radius: 8px;
     }

@@ -3,7 +3,7 @@
   padding: 40px;
 }
 .header {
-  max-width: 800px;
+  max-width: 350px;
   display: flex;
   justify-content: flex-start;
   align-items: center;

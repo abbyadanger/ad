@@ -10,7 +10,7 @@
 /* Main Content */
 .content {
     width: 100%;
-    max-width: 500px;
+    max-width: 350px;
     height: auto;
     align-self: center;
     text-align: center;
@@ -20,7 +20,7 @@
     }
     .film-image {
         width: 100%;
-        max-width: 500px;
+        max-width: 350px;
         height: auto;
         display: block;
         margin: 20px auto;

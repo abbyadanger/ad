@@ -8,7 +8,8 @@ import { WorkComponent } from './work/work.component';
 import { FilmComponent } from './film/film.component';
 
 export const routes: Routes = [
-  { path: '', component: MeComponent },
+  { path: '', redirectTo: 'me', pathMatch: 'full' },
+  { path: 'me', component: MeComponent },
   { path: 'work', component: WorkComponent },
   { path: 'film', component: FilmComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
