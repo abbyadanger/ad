@@ -14,19 +14,61 @@
     height: auto;
     align-self: center;
 }
-    .title {
-        font-size: x-large;
-    }
-    .year {
-        font-size: small;
+    /* Standard Link Styling (exclude button-like links) */
+    a:not(.arrow-button) {
         color: gray;
+        text-decoration: none;
     }
-    .description {
-        font-size: small;
+    a:not(.arrow-button):hover {
+        color: #33658a;
     }
-    .progressive {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        display: block;
-    }
+
+        /* Standard Block Styling */
+        .block {
+            padding-bottom: 20px;
+        }
+        .title {
+            font-size: x-large;
+        }
+        .little-title {
+            font-size: small;
+            color: gray;
+            font-style: italic;
+        }
+        .description {
+            font-size: small;
+        }
+
+        /* Progressive Block */
+        .progressive {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+        }
+
+        /* Dip Decision Block */
+        .dip-decision {
+            font-size: x-large;
+            color: gray;
+            text-decoration: none;
+        }
+        .dip-decision:hover {
+            color: #33658a;
+        }
+        .link-arrow {
+            font-size: small;
+            display: inline-block;
+        }
+        .arrow-button,
+        .arrow-button:hover {
+            background-color: rgba(51, 101, 138, 0.7);
+            font-family: inherit;
+            border: none;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }

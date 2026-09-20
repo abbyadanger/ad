@@ -1,0 +1,13 @@
+.dip-decision-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.dip-decision-page h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
