@@ -20,6 +20,7 @@
     .year {
         font-size: small;
         color: gray;
+        font-style: italic;
     }
     .description {
         font-size: small;
@@ -29,4 +30,7 @@
         max-width: 350px;
         height: auto;
         display: block;
+        border: 1px solid #33658a;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
