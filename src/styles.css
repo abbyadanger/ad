@@ -8,8 +8,10 @@ html, body {
   min-height: 100dvh; /* Dynamic viewport height for mobile */
   font-family: minion-3-1, serif;
 }
-html {
-  zoom: 1.3;
+@media (min-width: 600px) {
+  html {
+    zoom: 1.3;
+  }
 }
 body { 
   margin: 0; 
