@@ -21,7 +21,6 @@
     }
     a:not(.arrow-button):hover {
         color: #33658a;
-        font-style: italic;
     }
     .description {
         font-size: small;
