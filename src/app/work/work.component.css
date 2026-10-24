@@ -21,6 +21,19 @@
     }
     a:not(.arrow-button):hover {
         color: #33658a;
+        font-style: italic;
+    }
+    .description {
+        font-size: small;
+    }
+    .progressive {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        display: block;
+        border: 1px solid #33658a;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
 
         /* Standard Block Styling */

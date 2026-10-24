@@ -6,9 +6,9 @@
       </div>
     </a>
     <div class="menu">
-      <a routerLink="/me" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">me</a>
-      <a routerLink="/work" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">work</a>
-      <a routerLink="/film" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">film</a>
+      <a routerLink="/me" [class.active-link]="isActive('/me')">me</a>
+      <a routerLink="/work" [class.active-link]="isActive('/work')">work</a>
+      <a routerLink="/film" [class.active-link]="isActive('/film')">film</a>
     </div>
   </div>
 </div>
