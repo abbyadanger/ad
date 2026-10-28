@@ -34,3 +34,9 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+    .p-link {
+        color: gray;
+        font-style: italic;
+        text-decoration: none;
+    }
+    
